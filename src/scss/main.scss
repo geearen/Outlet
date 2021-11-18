@@ -1,3 +1,10 @@
 @import "../_variables/colors";
 @import "../_variables/fonts";
-@import "../pages/LandingPage.scss";
+@import "../pages/landingPage";
+@import "../components/Landing/LogoSection/logoSection";
+
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
