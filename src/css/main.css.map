@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AEAA,OAAO,CAAC,8KAAI;ACAZ,AAAA,aAAa,CAAA,EACX,UAAU,EAAE,iCAA8C,GAC3D",
+    "sources": [
+        "../scss/main.scss",
+        "../_variables/_colors.scss",
+        "../_variables/_fonts.scss",
+        "../pages/LandingPage.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

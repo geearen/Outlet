@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Particles from 'react-tsparticles';
 import particlesConfig from '../../../config/ParticleConfig';
 
-class Background extends Component {
+class LogoBackground extends Component {
   constructor(props) {
     super(props);
 
@@ -28,4 +28,4 @@ class Background extends Component {
   }
 }
 
-export default Background;
+export default LogoBackground;
