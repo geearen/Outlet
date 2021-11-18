@@ -18,12 +18,12 @@ class LogoBackground extends Component {
 
   render() {
     return (
-      <Particles
-        id="tsparticles"
-        init={this.particlesInit}
-        loaded={this.particlesLoaded}
-        options={particlesConfig}
-      />
+        <Particles
+          id="tsparticles"
+          init={this.particlesInit}
+          loaded={this.particlesLoaded}
+          options={particlesConfig}
+        />
     );
   }
 }

@@ -1,11 +1,12 @@
 {
     "version": 3,
-    "mappings": "AEAA,OAAO,CAAC,8KAAI;ACAZ,AAAA,aAAa,CAAA,EACX,UAAU,EAAE,iCAA8C,GAC3D",
+    "mappings": "AEAA,OAAO,CAAC,8KAAI;ACAZ,AAAA,aAAa,CAAA,EACX,MAAM,EAAE,KAAK,EAgBb,UAAU,EAAE,OAAU,EACtB,UAAU,EAAE,sDAAqE,EACjF,UAAU,EAAE,yDAAwE,EACpF,UAAU,EAAE,iDAAgE,EAC5E,MAAM,EAAE,wGAAwG,GACjH;;ACtBD,AAAA,aAAa,CAAA,EACX,OAAO,EAAE,IAAI,EACb,eAAe,EAAE,MAAM,EACvB,WAAW,EAAE,MAAM,EACnB,MAAM,EAAE,KAAK,EACb,KAAK,EAAE,IAAI,EACX,WAAW,EAAE,GAAG,EAChB,YAAY,EAAE,GAAG,GAmBlB;;AA1BD,AASE,aATW,CASX,GAAG,CAAA,EAID,MAAM,EAAE,KAAK,EACb,KAAK,EAAE,IAAI,GACZ;;AAfH,AAgBE,aAhBW,CAgBX,UAAU,CAAA,EAER,KAAK,EHXQ,OAAO,EGYpB,WAAW,EFjBH,WAAW,EAAE,OAAO,EEqB5B,SAAS,EAAE,IAAI,GAChB;;AJnBH,AAAA,CAAC,CAAA,EACC,UAAU,EAAE,UAAU,EACtB,OAAO,EAAE,GAAG,EACZ,MAAM,EAAE,GAAG,GACZ",
     "sources": [
         "../scss/main.scss",
         "../_variables/_colors.scss",
         "../_variables/_fonts.scss",
-        "../pages/LandingPage.scss"
+        "../pages/_landingPage.scss",
+        "../components/Landing/LogoSection/_logoSection.scss"
     ],
     "names": [],
     "file": "main.css"
