@@ -1,10 +1,12 @@
 import React from 'react'
 import Nav from '../components/Landing/NavBar/Navbar';
 import Footer from '../components/Landing/Footer/Footer';
+import Background from '../components/Landing/Background/Background';
 
 function LandingPage(){
   return(
     <div>
+      <Background/>
       <Nav/> 
       
       
