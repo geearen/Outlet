@@ -56,7 +56,7 @@ function Canvas({ data }) {
     setCurrentColor(data);
     selectedColor.current  = data
   }
-  console.log(selectedColor.current);
+
   const init = useCallback(() =>{
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
