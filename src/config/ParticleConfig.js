@@ -8,7 +8,7 @@ const particlesConfig = {
     position: "",
     repeat: "",
     size: "",
-    opacity: .3,
+    opacity: 1,
   },
   backgroundMask: {
     composite: "destination-out",
@@ -21,8 +21,8 @@ const particlesConfig = {
     enable: false,
   },
   fullScreen: {
-    enable: true,
-    zIndex: 0,
+    enable: false,
+    zIndex: -1,
   },
   detectRetina: true,
   duration: 0,
@@ -42,11 +42,11 @@ const particlesConfig = {
       },
       onHover: {
         enable: true,
-        mode: "none",
+        mode: "",
         parallax: {
           enable: true,
           force: 100,
-          smooth: 10,
+          smooth: 20,
         },
       },
       resize: true,
@@ -66,7 +66,7 @@ const particlesConfig = {
       bubble: {
         distance: 200,
         duration: 0.4,
-        mix: false,
+        mix: true,
       },
       connect: {
         distance: 80,

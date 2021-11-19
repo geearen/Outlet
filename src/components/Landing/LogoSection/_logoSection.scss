@@ -1,4 +1,4 @@
-.logo_section{
+.logo__section{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,14 +7,14 @@
   margin-left: 10%;
   margin-right: 10%;
 
-  svg{
+  .logo__svg{
     // position: absolute;
     // left:980px;
     // top: 420px;
     height: 150px;
     width: auto;
   }
-  .logo_text{
+  .logo__text{
 
     color: $mellow-apricot;
     font-family: $logo-font;
