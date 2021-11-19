@@ -1,16 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { NavbarData } from '../../data/NavbarData';
-import * as FaIcons from 'react-icons/fa'
+import * as FaIcons from 'react-icons/fa';
+import * as IoIcons from 'react-icons/io';
 
 function Navbar(){
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const handleClick = () => setShowMobileMenu(!showMobileMenu);
+
+  const closeMobileMenu = () => setShowMobileMenu(false);
+
   return(
     <nav className='navbar'>
-      <ul className='navbar-list'>
-        {NavbarData.map((item, idx) => {
+      <div className='nav-toggle-icon' onClick={handleClick}>
+        {showMobileMenu 
+          ? <IoIcons.IoMdClose /> 
+          : <FaIcons.FaBars />}
+      </div>
+      <ul className={showMobileMenu ? 'nav-menu active' : 'nav-menu'}>
+          {NavbarData.map((item, idx) => {
           return(
-            <li key={idx} className={item.className}>
-              <Link to={item.path}>
+            <li key={idx} className='nav-item'>
+              <Link to={item.path} className={item.className} onClick={closeMobileMenu}>
                 {item.title}
                 {
                   item.icon 
@@ -22,11 +34,6 @@ function Navbar(){
           )
         })}
       </ul>
-      <div className='navbar-toggle'>
-        <Link to='#' className='navbar-bars'>
-          <FaIcons.FaBars />
-        </Link>
-      </div>
     </nav>
   )
 }
