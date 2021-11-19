@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
-function Canvas() {
+function Canvas({ data }) {
   // @desc ref object that holds the reference to our canvas element. ref objects can store references to elements AND to preserve any kind of info we need between rerenders
   const canvasRef = useRef(null); 
   const contextRef = useRef(null);
@@ -8,7 +8,7 @@ function Canvas() {
   const [ isDrawing, setIsDrawing ] = useState(false);
 
   // @desc initializes canvas api when component is mounted
-  useEffect(() => {
+  useLayoutEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
@@ -20,10 +20,10 @@ function Canvas() {
 
     context.scale(2,2);
     context.lineCap = 'round';
-    context.strokeStyle = 'red';
+    context.strokeStyle = data;
     context.lineWidth = 5;
     contextRef.current = context;
-  }, [])
+  }, [data])
 
   const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;

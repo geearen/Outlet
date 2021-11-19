@@ -23,7 +23,7 @@ function CanvasPage(){
           )
         })}
       </div>
-      <Canvas />
+      <Canvas data={color} />
     </>
   )
 }
