@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
+
 
 function Canvas({ data }) {
   // @desc ref object that holds the reference to our canvas element. ref objects can store references to elements AND to preserve any kind of info we need between rerenders
@@ -6,9 +7,12 @@ function Canvas({ data }) {
   const contextRef = useRef(null);
 
   const [ isDrawing, setIsDrawing ] = useState(false);
+  const [currentColor, setCurrentColor] = useState("#000000");
 
+  const selectedColor = useRef("#000000");
+  
   // @desc initializes canvas api when component is mounted
-  useLayoutEffect(() => {
+  useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
@@ -16,14 +20,15 @@ function Canvas({ data }) {
     canvas.style.height = `${window.innerHeight}px`;
 
     // @desc context to allow us to draw on canvas which is needed in startDrawing, finish, and draw
-    const context = canvas.getContext('2d');
+    // const context = canvas.getContext('2d');
 
-    context.scale(2,2);
-    context.lineCap = 'round';
-    context.strokeStyle = data;
-    context.lineWidth = 5;
-    contextRef.current = context;
-  }, [data])
+    // context.scale(2,2);
+    // context.lineCap = 'round';
+    // context.strokeStyle = data;
+    // context.lineWidth = 5;
+    // contextRef.current = context;
+    init();
+  }, [])
 
   const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
@@ -47,6 +52,22 @@ function Canvas({ data }) {
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke()
   }
+  const handleColor =() =>{
+    setCurrentColor(data);
+    selectedColor.current  = data
+  }
+  console.log(selectedColor.current);
+  const init = useCallback(() =>{
+    const canvas = canvasRef.current;
+    const context = canvas.getContext("2d");
+
+    context.scale(2, 2);
+    context.lineCap = "round";
+    context.strokeStyle = 'black';
+    context.lineWidth = 5;
+    contextRef.current = context;
+  },[]) 
+
 
   return(
     <canvas 
