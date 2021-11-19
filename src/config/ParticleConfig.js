@@ -42,11 +42,11 @@ const particlesConfig = {
       },
       onHover: {
         enable: true,
-        mode: "none",
+        mode: "",
         parallax: {
           enable: true,
           force: 100,
-          smooth: 10,
+          smooth: 20,
         },
       },
       resize: true,
@@ -66,7 +66,7 @@ const particlesConfig = {
       bubble: {
         distance: 200,
         duration: 0.4,
-        mix: false,
+        mix: true,
       },
       connect: {
         distance: 80,
