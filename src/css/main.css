@@ -7,7 +7,9 @@
 
 .logo_section .logo_text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; }
 
-.nav-menu { list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; font-family: "Open Sans Condensed", sans-serif; text-transform: uppercase; background: rgba(1, 2, 6, 0.4); padding: 30px; }
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(1, 2, 6, 0.4); padding: 30px; }
+
+.nav-menu { list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; font-family: "Open Sans Condensed", sans-serif; text-transform: uppercase; }
 
 .nav-item { padding: 10px 20px; margin: 10px 20px; background-color: #492d76; border-radius: 3px; font-size: 1.4rem; }
 
@@ -17,9 +19,9 @@
 
 .nav-toggle-icon { display: none; }
 
-@media screen and (max-width: 960px) { .nav-toggle-icon { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-line-pack: end; align-content: flex-end; font-size: 2rem; cursor: pointer; color: #f5fdfd; margin-right: 50px; }
+@media screen and (max-width: 960px) { .nav-toggle-icon { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-line-pack: end; align-content: flex-end; font-size: 2rem; cursor: pointer; color: #f5fdfd; margin-right: 20px; }
   .nav-menu { display: none; }
-  .nav-menu.active { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 100%; height: 50vh; text-align: center; }
+  .nav-menu.active { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-line-pack: start; align-content: flex-start; width: 100%; text-align: center; }
   .nav-item { -ms-flex-line-pack: end; align-content: flex-end; } }
 
 .color-option { width: 50px; height: 50px; }

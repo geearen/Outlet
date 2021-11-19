@@ -9,9 +9,9 @@ function LandingPage(){
   return(
   <>
     <div className="landing_page">
+    <Navbar/> 
     <LogoBackground/>
     <LogoSection/>
-      <Navbar/> 
       <h1>
         Hello I am Landing Page
       </h1>
