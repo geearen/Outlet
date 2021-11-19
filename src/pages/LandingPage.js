@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Landing/Navbar/Navbar';
+import Navbar from '../components/Landing/NavBar/Navbar';
 import Footer from '../components/Landing/Footer/Footer';
 
 import LogoBackground from '../components/Landing/LogoBackground/LogoBackground';
