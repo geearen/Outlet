@@ -7,19 +7,19 @@ import LogoSection from '../components/Landing/LogoSection/LogoSection';
 
 function LandingPage(){
   return(
-  <>
-    <div className="landing_page">
-    <Navbar/> 
-    <LogoBackground/>
-    <LogoSection/>
-      <h1>
-        Hello I am Landing Page
-      </h1>
-      <a href="/canvas"> Canvas Link</a>
+    <>
+      <div className="landing_page">
+      </div>
+      <Navbar/> 
+      <LogoSection/>
+        <h1>
+          Hello I am Landing Page
+        </h1>
+        <a href='/canvas'> Canvas Link</a>
 
-      <Footer/>
-    </div>
-  </>
+        <Footer/>
+      <LogoBackground/>
+    </>
   )
 }
 
