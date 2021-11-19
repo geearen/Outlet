@@ -7,5 +7,11 @@
 
 .logo_section .logo_text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; }
 
+.color-option { width: 50px; height: 50px; }
+
+#red { background-color: red; }
+
+#blue { background-color: blue; }
+
 * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0px; margin: 0px; }
 /*# sourceMappingURL=main.css.map */
