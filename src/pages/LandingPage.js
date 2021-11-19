@@ -9,7 +9,7 @@ function LandingPage(){
   return(
   <>
     <div className='landing_page'>
-    <LogoBackground/>
+    </div>
     <LogoSection/>
       <Nav/> 
       <h1>
@@ -18,7 +18,7 @@ function LandingPage(){
       <a href='/canvas'> Canvas Link</a>
 
       <Footer/>
-    </div>
+    <LogoBackground/>
   </>
   )
 }

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
-.landing_page { height: 500vh; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(#010206), to(#0a2059)); background: linear-gradient(180deg, #010206 0%, #0a2059 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
+.landing_page { height: 500vh; background: rgba(1, 2, 6, 0.2); background: -webkit-gradient(linear, left top, left bottom, from(#010206), to(#0a2059)); background: linear-gradient(180deg, #010206 0%, #0a2059 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 

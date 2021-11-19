@@ -15,9 +15,10 @@
   // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1);
 
 
-  background: rgb(1,2,6);
+  background: rgba(1,2,6,.2);
   background: -moz-linear-gradient(180deg, rgba(1,2,6,1) 0%, rgba(10,32,89,1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(1,2,6,1) 0%, rgba(10,32,89,1) 100%);
   background: linear-gradient(180deg, rgba(1,2,6,1) 0%, rgba(10,32,89,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1);
+  
 }

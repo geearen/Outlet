@@ -8,7 +8,7 @@ const particlesConfig = {
     position: "",
     repeat: "",
     size: "",
-    opacity: .3,
+    opacity: 1,
   },
   backgroundMask: {
     composite: "destination-out",
@@ -21,8 +21,8 @@ const particlesConfig = {
     enable: false,
   },
   fullScreen: {
-    enable: true,
-    zIndex: 0,
+    enable: false,
+    zIndex: -1,
   },
   detectRetina: true,
   duration: 0,
