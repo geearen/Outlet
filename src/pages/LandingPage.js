@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../components/Landing/NavBar/Navbar';
+import Navbar from '../components/Landing/Navbar/Navbar';
 import Footer from '../components/Landing/Footer/Footer';
 
 import LogoBackground from '../components/Landing/LogoBackground/LogoBackground';
@@ -11,7 +11,7 @@ function LandingPage(){
     <div className="landing_page">
     <LogoBackground/>
     <LogoSection/>
-      <Nav/> 
+      <Navbar/> 
       <h1>
         Hello I am Landing Page
       </h1>

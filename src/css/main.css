@@ -7,6 +7,19 @@
 
 .logo_section .logo_text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; }
 
+.navbar .navbar-toggle { display: none; }
+
+.navbar-list { list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; font-family: "Open Sans Condensed", sans-serif; text-transform: uppercase; background: rgba(1, 2, 6, 0.4); padding: 30px; }
+
+.nav-item { padding: 10px 30px; margin: 10px 20px; background-color: #492d76; border-radius: 3px; font-size: 1.4rem; }
+
+.nav-item a { color: #f5fdfd; text-decoration: none; }
+
+.nav-item-icon { padding-left: 10px; font-size: 0.9em; }
+
+@media screen and (max-width: 600px) { .navbar .navbar-list { display: none; }
+  .navbar .navbar-toggle { display: block; } }
+
 .color-option { width: 50px; height: 50px; }
 
 #red { background-color: red; }

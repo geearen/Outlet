@@ -1,0 +1,41 @@
+.navbar .navbar-toggle {
+  display: none;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  font-family: $header-font;
+  text-transform: uppercase;
+  background: rgba($rich-black, 0.4);
+  padding: 30px;
+}
+
+.nav-item {
+  padding: 10px 30px;
+  margin: 10px 20px;
+  background-color: $spanish-violet;
+  border-radius: 3px;
+  font-size: 1.4rem;
+
+  a {
+    color: $mint-cream;
+    text-decoration: none;
+  }
+}
+
+.nav-item-icon {
+  padding-left: 10px;
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .navbar-list {
+    display: none;
+  }
+
+  .navbar .navbar-toggle {
+    display: block;
+  }
+}
