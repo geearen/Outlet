@@ -2,9 +2,14 @@ import React from 'react'
 
 export default function Footer(){
   return(
-    <div>
+    <div className="footer">
 
-      <h3>Technologies</h3>
+      <h2>Technologies</h2> 
+      <div className="footer__icon">
+        <h4>React Icon</h4>
+        <h4>Sass Icon</h4>
+        
+      </div>
     </div>
   )
 }
