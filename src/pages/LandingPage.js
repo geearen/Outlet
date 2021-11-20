@@ -9,18 +9,25 @@ import Developer from '../components/Landing/Developers/Developer';
 function LandingPage(){
   return(
     <>
-      <Navbar/> 
-      <LogoSection/>  
+        <div className="landing_page">
+        <LogoBackground/>
+
+          
+
+        <Navbar/> 
+        <LogoSection/>  
         <h1>
           Hello I am Landing Page
         </h1>
         <a href='/canvas'> Canvas Link</a>
         <Developer/>
         <Footer/>
-      <div className="landing_page">
-      </div>
-      <LogoBackground>
-      </LogoBackground>
+          
+
+        </div>
+
+
+        
     </>
   )
 }
