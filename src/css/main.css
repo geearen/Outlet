@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 .landing_page { height: 500vh; position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
-.landing_page .landing__content { position: absolute; opacity: 1; }
-
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
 .logo__section .logo__svg { height: 150px; width: auto; }
@@ -33,6 +31,8 @@
 .footer .footer__icon { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
 .footer .footer__icon h4 { color: #15529c; padding: 2rem; }
+
+.developer__portrait img { width: 100px; height: auto; }
 
 .color-option { width: 50px; height: 50px; }
 

@@ -12,17 +12,17 @@ function LandingPage(){
         <div className="landing_page">
         <LogoBackground/>
 
-          <div className="landing__content">
+          
 
-            <Navbar/> 
-            <LogoSection/>  
-            <h1>
-              Hello I am Landing Page
-            </h1>
-            <a href='/canvas'> Canvas Link</a>
-            <Developer/>
-            <Footer/>
-          </div>
+        <Navbar/> 
+        <LogoSection/>  
+        <h1>
+          Hello I am Landing Page
+        </h1>
+        <a href='/canvas'> Canvas Link</a>
+        <Developer/>
+        <Footer/>
+          
 
         </div>
 
