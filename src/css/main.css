@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
-.landing_page { height: 500vh; background: rgba(1, 2, 6, 0.2); background: -webkit-gradient(linear, left top, left bottom, from(#010206), to(#0a2059)); background: linear-gradient(180deg, #010206 0%, #0a2059 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
+.landing_page { height: 500vh; position: absolute; z-index: 0; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(#010206), to(#0a2059)); background: linear-gradient(180deg, #010206 0%, #0a2059 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); opacity: 0.5; }
 
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
@@ -23,6 +23,14 @@
   .nav-menu { display: none; }
   .nav-menu.active { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-line-pack: start; align-content: flex-start; width: 100%; text-align: center; }
   .nav-item { -ms-flex-line-pack: end; align-content: flex-end; } }
+
+.footer { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-family: "Open Sans Condensed", sans-serif; font-size: 20px; }
+
+.footer h2 { color: #f6c079; }
+
+.footer .footer__icon { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.footer .footer__icon h4 { color: #15529c; padding: 2rem; }
 
 .color-option { width: 50px; height: 50px; }
 
