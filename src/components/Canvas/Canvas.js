@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import ColorPicker from './ColorPicker';
+import Toolbar from './Toolbar';
 
 
 function Canvas() {
@@ -21,14 +21,13 @@ function Canvas() {
     canvas.style.height = `${window.innerHeight}px`;
 
     // @desc context to allow us to draw on canvas which is needed in startDrawing, finish, and draw
-    // const context = canvas.getContext('2d');
+    const context = canvas.getContext('2d');
 
-    // context.scale(2,2);
-    // context.lineCap = 'round';
-    // context.strokeStyle = data;
-    // context.lineWidth = 5;
-    // contextRef.current = context;
-    init();
+    context.scale(2,2);
+    context.lineCap = 'round';
+    context.strokeStyle = '#000000';
+    context.lineWidth = 5;
+    contextRef.current = context;
   }, [])
 
   const startDrawing = ({ nativeEvent }) => {
@@ -61,21 +60,9 @@ function Canvas() {
     selectedColor.current = e.currentTarget.value;
   }
 
-  const init = useCallback(() =>{
-    const canvas = canvasRef.current;
-    const context = canvas.getContext("2d");
-
-    context.scale(2, 2);
-    context.lineCap = "round";
-    context.strokeStyle = 'black';
-    context.lineWidth = 5;
-    contextRef.current = context;
-  },[]) 
-
-
   return(
     <>
-      <ColorPicker handleColor={handleColor}/>
+      <Toolbar handleColor={handleColor}/>
       <canvas 
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
