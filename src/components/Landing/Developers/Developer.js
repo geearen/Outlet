@@ -1,10 +1,11 @@
 import React from 'react'
 import { DeveloperData } from '../../data/DeveloperData';
+import Heading from '../Heading/Heading'
 function Developer(){
   
   return(
     <div className="developers">
-
+      <Heading title='Meet the Developers!!!' />
       {DeveloperData.map((item) =>{
         return (
           <>

@@ -2,8 +2,8 @@ export const DeveloperData = [
   {
     name: "Lonna Lu",
     github: "https://github.com/Luna5678",
-    email: "#",
-    portfolio: "#",
+    email: "lonna.dev@gmail.com",
+    portfolio: "https://lonnalu.com",
     portrait: "#",
     linkedin: "https://www.linkedin.com/in/lonna-lu/",
     about: " I am a web developer",

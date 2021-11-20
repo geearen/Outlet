@@ -1,20 +1,15 @@
-.footer{
+.footer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: $header-font;
-  font-size: 20px;
-  
-  h2{
-    color: $mellow-apricot;
-  }
-  .footer__icon{
+
+  .footer__icon {
     display: flex;
-    
-    h4{
-      color:$usafa-blue;
+
+    h4 {
+      color: $usafa-blue;
       padding: 2rem;
     }
   }
