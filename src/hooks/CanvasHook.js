@@ -7,7 +7,7 @@ function CanvasHook(){
   const [isReady, setIsReady] = useState(false);
   // const [isDrawing, setIsDrawing] = useState(false);
 
-  const [currentColor, setCurrentColor] = useState('black')
+  const [currentColor, setCurrentColor] = useState('#000000')
   
   const lastX = useRef(0);
   const lastY = useRef(0);
@@ -76,7 +76,7 @@ function CanvasHook(){
   },[draw, handleMouseDown, stopDrawing]); 
 
   const handleColor = (e) =>{
-    setCurrentColor(e.current.value);
+    setCurrentColor(e.currentTarget.value);
     selectedColor.current = e.currentTarget.value;
   }
 

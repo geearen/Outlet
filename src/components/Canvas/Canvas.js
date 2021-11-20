@@ -1,7 +1,8 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
+import ColorPicker from './ColorPicker';
 
 
-function Canvas({ data }) {
+function Canvas() {
   // @desc ref object that holds the reference to our canvas element. ref objects can store references to elements AND to preserve any kind of info we need between rerenders
   const canvasRef = useRef(null); 
   const contextRef = useRef(null);
@@ -34,6 +35,8 @@ function Canvas({ data }) {
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
+    contextRef.current.strokeStyle = selectedColor.current;
+    setCurrentColor(selectedColor.current);
 
     setIsDrawing(true);
   }
@@ -52,9 +55,10 @@ function Canvas({ data }) {
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke()
   }
-  const handleColor =() =>{
-    setCurrentColor(data);
-    selectedColor.current  = data
+
+  const handleColor =(e) =>{
+    setCurrentColor(e.currentTarget.value);
+    selectedColor.current = e.currentTarget.value;
   }
 
   const init = useCallback(() =>{
@@ -70,13 +74,16 @@ function Canvas({ data }) {
 
 
   return(
-    <canvas 
-      onMouseDown={startDrawing}
-      onMouseUp={finishDrawing}
-      onMouseMove={draw}
-      ref={canvasRef}
-      style={{border:'1px solid black'}}
-    />
+    <>
+      <ColorPicker handleColor={handleColor}/>
+      <canvas 
+        onMouseDown={startDrawing}
+        onMouseUp={finishDrawing}
+        onMouseMove={draw}
+        ref={canvasRef}
+        style={{border:'1px solid black'}}
+      />
+    </>
   )
 }
 
