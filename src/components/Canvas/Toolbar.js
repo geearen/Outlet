@@ -1,4 +1,4 @@
-function Toolbar({ handleColor, handleWidth }) {
+function Toolbar({ handleColor, handleWidth, handleClear }) {
   return (
     <div className="toolbar">
       <div className="toolbar__color">
@@ -13,6 +13,10 @@ function Toolbar({ handleColor, handleWidth }) {
           max="100"
           onChange={handleWidth}
         />
+      </div>
+
+      <div>
+        <button onClick={handleClear}> Clear </button>
       </div>
     </div>
   );

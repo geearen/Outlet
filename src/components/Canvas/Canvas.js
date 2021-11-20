@@ -51,12 +51,11 @@ function Canvas() {
 
     if(contextRef.current.lineWidth > 90 || contextRef.current.lineWidth <10){
       direction.current = !direction.current;
-  }    
+    }
+
     direction.current ? contextRef.current.lineWidth++ : contextRef.current.lineWidth--;
     setCurrentWidth(contextRef.current.lineWidth);
   },[]);
-
-
 
   const finishDrawing = () => {
     contextRef.current.closePath();
@@ -83,9 +82,17 @@ function Canvas() {
     selectedLineWidth.current = e.currentTarget.value;
   };
 
+  const handleClear = useCallback(() => {
+    if(!contextRef || !contextRef.current || !canvasRef || !canvasRef.current){
+      return;
+    }
+    contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+  },[])
+
   return(
     <>
-      <Toolbar handleColor={handleColor} handleWidth={handleWidth}/>
+      <Toolbar handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear}/>
       <canvas 
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
