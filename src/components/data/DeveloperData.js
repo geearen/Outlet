@@ -4,7 +4,7 @@ export const DeveloperData = [
     github: "https://github.com/Luna5678",
     email: "lonna.dev@gmail.com",
     portfolio: "https://lonnalu.com",
-    portrait: "#",
+    portrait: "https://thesource.com/wp-content/uploads/2021/11/FDIXJ42WQAAy9eV.jpeg",
     linkedin: "https://www.linkedin.com/in/lonna-lu/",
     about: " I am a web developer",
   },
