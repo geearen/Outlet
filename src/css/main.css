@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
-.landing_page { height: 500vh; position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
+.landing_page { position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
@@ -26,13 +26,13 @@
 
 h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c079; text-transform: uppercase; font-weight: 300; font-size: 2rem; margin: 50px 0; }
 
-.about-outlet { width: 100%; text-align: center; font-family: "Manrope", sans-serif; color: #f5fdfd; font-size: 1.3rem; padding: 50px; }
+.about-outlet { width: 100%; text-align: center; font-family: "Manrope", sans-serif; color: #f5fdfd; font-size: 1.3rem; padding: 50px; line-height: 2; }
 
 .about__description p:nth-child(2) { color: #9ee5ef; }
 
 .about__description p:nth-child(3) { color: #37b4d4; }
 
-.about__tutorial { margin: 100px auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 100px; }
+.about__tutorial { margin-top: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 100px; }
 
 .about__tutorial .about__tutorial__content { text-align: left; }
 
@@ -41,7 +41,7 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 @media screen and (max-width: 960px) { .about__tutorial { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   .about__tutorial .about__tutorial__content { text-align: center; } }
 
-.developers { width: 100%; text-align: center; padding: 0 50px; }
+.developers { width: 100%; text-align: center; padding: 50px; }
 
 .developers__container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 100px; margin: 0 auto; max-width: 1200px; }
 
@@ -59,11 +59,11 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 @media screen and (max-width: 960px) { .developer__profile { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; } }
 
-.footer { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.footer { width: 100%; padding: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.footer .footer__icon { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.footer .footer__icon__container { display: -webkit-box; display: -ms-flexbox; display: flex; color: #37b4d4; font-size: 4rem; }
 
-.footer .footer__icon h4 { color: #15529c; padding: 2rem; }
+.footer .footer__icon__container .footer__icon { padding: 0 20px; }
 
 .color-option { width: 50px; height: 50px; }
 
