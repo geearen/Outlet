@@ -11,9 +11,11 @@
 
 .nav-menu { list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; font-family: "Open Sans Condensed", sans-serif; text-transform: uppercase; }
 
-.nav-item { padding: 10px 20px; margin: 10px 20px; background-color: #492d76; border-radius: 3px; font-size: 1.4rem; }
+.nav-item { padding: 10px 40px; margin: 10px 20px; background-color: #492d76; border-radius: 3px; font-size: 1.4rem; -webkit-transition: 0.3s; transition: 0.3s; }
 
 .nav-item a { color: #f5fdfd; text-decoration: none; }
+
+.nav-item:hover { -webkit-transform: scale(1.05); transform: scale(1.05); -webkit-box-shadow: 0 0 10px 3px #f5fdfd; box-shadow: 0 0 10px 3px #f5fdfd; }
 
 .nav-item-icon { padding-left: 10px; font-size: 0.9em; }
 
@@ -47,7 +49,7 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .developer__profile { display: -webkit-box; display: -ms-flexbox; display: flex; gap: 50px; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; min-height: 300px; font-family: "Manrope", sans-serif; color: #f5fdfd; }
 
-.developer__about { border: 1px solid #492d76; border-radius: 3px; -webkit-box-shadow: 0 0 15px 7px #492d76; box-shadow: 0 0 15px 7px #492d76; line-height: 2; margin: auto; padding: 0 20px; min-height: 300px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.developer__about { border-radius: 3px; -webkit-box-shadow: 0 0 13px 7px #492d76; box-shadow: 0 0 13px 7px #492d76; line-height: 2; margin: auto; padding: 0 20px; min-height: 300px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background: rgba(73, 45, 118, 0.8); }
 
 .developer__about h3 { text-transform: uppercase; padding-top: 10px; }
 
@@ -66,6 +68,8 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 .footer .footer__icon__container .footer__icon { padding: 0 20px; }
 
 .color-option { width: 50px; height: 50px; }
+
+.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 1rem; margin: 1rem; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0px; margin: 0px; }
 /*# sourceMappingURL=main.css.map */

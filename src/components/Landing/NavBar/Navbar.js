@@ -22,7 +22,7 @@ function Navbar(){
           {NavbarData.map((item, idx) => {
           return(
             <li key={idx} className='nav-item'>
-              <Link to={item.path} className={item.className} onClick={closeMobileMenu}>
+              <Link to={item.path} onClick={closeMobileMenu}>
                 {item.title}
                 {
                   item.icon 

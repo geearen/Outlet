@@ -24,9 +24,8 @@
 }
 
 .developer__about {
-  border: 1px solid $spanish-violet;
   border-radius: 3px;
-  box-shadow: 0 0 15px 7px $spanish-violet;
+  box-shadow: 0 0 13px 7px $spanish-violet;
   line-height: 2;
   margin: auto;
   padding: 0 20px;
@@ -34,6 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: transparentize($spanish-violet, 0.2);
 
   h3 {
     text-transform: uppercase;
