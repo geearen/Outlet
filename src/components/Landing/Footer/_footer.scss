@@ -1,21 +1,18 @@
-.footer{
+.footer {
   width: 100%;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: $header-font;
-  font-size: 20px;
-  
-  h2{
-    color: $mellow-apricot;
-  }
-  .footer__icon{
+
+  .footer__icon__container {
     display: flex;
-    
-    h4{
-      color:$usafa-blue;
-      padding: 2rem;
+    color: $maximum-blue;
+    font-size: 4rem;
+
+    .footer__icon {
+      padding: 0 20px;
     }
   }
 }
