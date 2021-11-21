@@ -37,26 +37,25 @@ function Canvas() {
     contextRef.current = context;
   }, [])
 
-  const startDrawing = ({ nativeEvent }) => {
-    const { offsetX, offsetY } = nativeEvent;
+  const startDrawing = useCallback((e) => {
+    const { offsetX, offsetY } = e;
 
 
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
+    contextRef.current.strokeStyle = selectedColor.current;
+    contextRef.current.lineWidth = selectedLineWidth.current;
+    setCurrentColor(selectedColor.current);
+    dynamicLineWidth(selectedLineWidth.current);
 
     if(isPaintMode.current || isEraserMode.current){
-      contextRef.current.strokeStyle = selectedColor.current;
-      setCurrentColor(selectedColor.current);
-      contextRef.current.lineWidth = selectedLineWidth.current;
-      dynamicLineWidth(selectedLineWidth.current);
 
       isEraserMode.current ? (contextRef.current.globalCompositeOperation ="destination-out") :(contextRef.current.globalCompositeOperation = "source-over");
 
     }
 
     setIsDrawing(true);
-    handlePaintMode();
-  }
+  },[]);
 
   const dynamicLineWidth = useCallback(() =>{
     if(!contextRef || !contextRef.current) return;
