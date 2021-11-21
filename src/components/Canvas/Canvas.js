@@ -92,8 +92,9 @@ function Canvas() {
 
   return(
     <>
-      <Toolbar handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear}/>
-      <canvas 
+      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear}/>
+      <canvas
+        className="canvas__drawpad"
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}
