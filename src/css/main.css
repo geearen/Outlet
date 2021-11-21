@@ -24,17 +24,28 @@
   .nav-menu.active { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-line-pack: start; align-content: flex-start; width: 100%; text-align: center; }
   .nav-item { -ms-flex-line-pack: end; align-content: flex-end; } }
 
-.footer { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c079; text-transform: uppercase; font-weight: 300; font-size: 2rem; margin: 50px 0; }
 
-.footer .footer__icon { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.about-outlet { width: 100%; text-align: center; font-family: "Manrope", sans-serif; color: #f5fdfd; font-size: 1.3rem; padding: 50px; }
 
-.footer .footer__icon h4 { color: #15529c; padding: 2rem; }
+.about__description p:nth-child(2) { color: #9ee5ef; }
 
-.developers { width: 100%; text-align: center; }
+.about__description p:nth-child(3) { color: #37b4d4; }
+
+.about__tutorial { margin: 100px auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 100px; }
+
+.about__tutorial .about__tutorial__content { text-align: left; }
+
+.about__tutorial .about__tutorial__video { min-width: 300px; height: 300px; border: 1px solid #15529c; border-radius: 3px; -webkit-box-shadow: 0 0 15px 7px #15529c; box-shadow: 0 0 15px 7px #15529c; }
+
+@media screen and (max-width: 960px) { .about__tutorial { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  .about__tutorial .about__tutorial__content { text-align: center; } }
+
+.developers { width: 100%; text-align: center; padding: 0 50px; }
 
 .developers__container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 100px; margin: 0 auto; max-width: 1200px; }
 
-.developer__profile { display: -webkit-box; display: -ms-flexbox; display: flex; gap: 50px; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; min-height: 300px; font-family: "Manrope", sans-serif; color: #f5fdfd; padding: 0 50px; }
+.developer__profile { display: -webkit-box; display: -ms-flexbox; display: flex; gap: 50px; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; min-height: 300px; font-family: "Manrope", sans-serif; color: #f5fdfd; }
 
 .developer__about { border: 1px solid #492d76; border-radius: 3px; -webkit-box-shadow: 0 0 15px 7px #492d76; box-shadow: 0 0 15px 7px #492d76; line-height: 2; margin: auto; padding: 0 20px; min-height: 300px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -48,7 +59,11 @@
 
 @media screen and (max-width: 960px) { .developer__profile { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; } }
 
-h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c079; text-transform: uppercase; font-weight: 300; font-size: 2rem; margin: 50px 0; }
+.footer { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.footer .footer__icon { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.footer .footer__icon h4 { color: #15529c; padding: 2rem; }
 
 .color-option { width: 50px; height: 50px; }
 

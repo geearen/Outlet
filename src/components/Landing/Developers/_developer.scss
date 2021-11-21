@@ -1,6 +1,7 @@
 .developers {
   width: 100%;
   text-align: center;
+  padding: 0 50px;
 }
 
 .developers__container {
@@ -20,7 +21,6 @@
   min-height: 300px;
   font-family: $body-font;
   color: $mint-cream;
-  padding: 0 50px;
 }
 
 .developer__about {
