@@ -6,7 +6,7 @@ export const DeveloperData = [
     portfolio: "https://lonnalu.com",
     portrait: "https://thesource.com/wp-content/uploads/2021/11/FDIXJ42WQAAy9eV.jpeg",
     linkedin: "https://www.linkedin.com/in/lonna-lu/",
-    about: " I am a web developer",
+    about: " I am a web developer. Praesent in mauris eu tortor porttitor accumsan. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Aenean fermentum risus id tortor. Integer imperdiet lectus quis justo. Aenean fermentum risus id tortor. Integer imperdiet lectus quis justo.",
   },
   {
     name: "Allen Gonzales",
@@ -16,6 +16,6 @@ export const DeveloperData = [
     portrait:
       "https://res.cloudinary.com/dsxis0hux/image/upload/v1637386168/pics/20201227-MRJ01356_barxvr.jpg",
     linkedin: "https://www.linkedin.com/in/allen-gee/",
-    about: " I am a web developer",
+    about: " I am a web developer. Praesent in mauris eu tortor porttitor accumsan. Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Aenean fermentum risus id tortor. Integer imperdiet lectus quis justo. Aenean fermentum risus id tortor. Integer imperdiet lectus quis justo.",
   },
 ];

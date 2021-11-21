@@ -1,11 +1,13 @@
 import React from 'react'
 import { DeveloperData } from '../../data/DeveloperData';
 import Heading from '../Heading/Heading'
+import * as FaIcons from 'react-icons/fa';
+
 function Developer(){
   
   return(
     <div className='developers'>
-      <Heading title='Meet the Developers!!!' />
+      <Heading title='Meet the Developers' />
 
       <div className="developers__container">
         {DeveloperData.map((item, idx) =>{
@@ -16,13 +18,16 @@ function Developer(){
               </div>
 
               <div className='developer__about'>
-                <h2>{item.name}</h2>
+                <h3>{item.name}</h3>
                 <p>{item.about}</p>
 
-                <a href=''>{item.github}</a>
-                <a href=''>{item.linkedin}</a>
-                <a href=''>{item.portfolio}</a>
-                <a href=''>{item.email}</a>
+              <div className="developer__links">
+                <a href={item.github}><FaIcons.FaGithub /></a>
+                <a href={item.linkedin}><FaIcons.FaLinkedin /></a>
+                <a href={item.portfolio}><FaIcons.FaSuitcase /></a>
+                <a href={item.email}><FaIcons.FaEnvelope /></a>
+              </div>
+                
               </div>
             </div>
           );

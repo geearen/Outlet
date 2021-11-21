@@ -16,10 +16,6 @@ function LandingPage(){
 
         <Navbar/> 
         <LogoSection/>  
-        <h1>
-          Hello I am Landing Page
-        </h1>
-        <a href='/canvas'> Canvas Link</a>
         <Developer/>
         <Footer/>
           
