@@ -13,7 +13,7 @@ function Canvas() {
   const [isEraser, setIsEraser] = useState(false);
   const [currentColor, setCurrentColor] = useState("#000000");
   const [currentWidth, setCurrentWidth] = useState(5);
-  const [dateUrl, setDataUrl] = useState('#')
+  const [dataUrl, setDataUrl] = useState('#')
 
   const selectedColor = useRef("#000000");
   const selectedLineWidth = useRef(5);
@@ -103,7 +103,6 @@ function Canvas() {
 
   },[])
 
-
   const handlePaintMode = useCallback(() =>{
     setIsPaint(true);
     isEraserMode.current = false;
@@ -125,7 +124,7 @@ function Canvas() {
 
   return(
     <>
-      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} />
+      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
       <canvas
         className="canvas__drawpad"
         onMouseDown={startDrawing}
