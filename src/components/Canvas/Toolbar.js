@@ -1,4 +1,6 @@
-function Toolbar({ handleColor, handleWidth, handleClear }) {
+import React from 'react'
+
+function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode  }) {
   return (
     <div className="toolbar">
       <div className="toolbar__color">
@@ -15,8 +17,16 @@ function Toolbar({ handleColor, handleWidth, handleClear }) {
         />
       </div>
 
-      <div>
+      <div className="toolbar__clear">
         <button onClick={handleClear}> Clear </button>
+      </div>
+
+      <div className="toolbar__eraser">
+        <button onClick={handleEraserMode}> Eraser</button>
+      </div>
+
+      <div className="toolbar__paint"> 
+        <button onClick={handlePaintMode}>Paint</button>
       </div>
     </div>
   );

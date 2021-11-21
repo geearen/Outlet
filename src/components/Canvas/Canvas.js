@@ -8,12 +8,16 @@ function Canvas() {
   const contextRef = useRef(null);
 
   const [ isDrawing, setIsDrawing ] = useState(false);
+  const [isPaint, setIsPaint] = useState(false);
+  const [isEraser, setIsEraser] = useState(false);
   const [currentColor, setCurrentColor] = useState("#000000");
   const [currentWidth, setCurrentWidth] = useState(5);
 
   const selectedColor = useRef("#000000");
   const selectedLineWidth = useRef(5);
   const direction = useRef(true);
+  const isPaintMode= useRef(false);
+  const isEraserMode = useRef(false);
 
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
@@ -35,15 +39,23 @@ function Canvas() {
 
   const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
+
+
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
-    contextRef.current.strokeStyle = selectedColor.current;
-    contextRef.current.lineWidth = selectedLineWidth.current;
-    setCurrentColor(selectedColor.current);
-    dynamicLineWidth(selectedLineWidth.current);
 
+    if(isPaintMode.current || isEraserMode.current){
+      contextRef.current.strokeStyle = selectedColor.current;
+      setCurrentColor(selectedColor.current);
+      contextRef.current.lineWidth = selectedLineWidth.current;
+      dynamicLineWidth(selectedLineWidth.current);
+
+      isEraserMode.current ? (contextRef.current.globalCompositeOperation ="destination-out") :(contextRef.current.globalCompositeOperation = "source-over");
+
+    }
 
     setIsDrawing(true);
+    handlePaintMode();
   }
 
   const dynamicLineWidth = useCallback(() =>{
@@ -82,6 +94,7 @@ function Canvas() {
     selectedLineWidth.current = e.currentTarget.value;
   };
 
+  //@desc will reset / clear the canvas
   const handleClear = useCallback(() => {
     if(!contextRef || !contextRef.current || !canvasRef || !canvasRef.current){
       return;
@@ -90,9 +103,23 @@ function Canvas() {
 
   },[])
 
+
+  const handlePaintMode = useCallback(() =>{
+    setIsPaint(true);
+    isEraserMode.current = false;
+    setIsEraser(false);
+    isPaintMode.current = true;
+  },[])
+  
+  const handleEraserMode = useCallback(()=>{
+    setIsPaint(true);
+    isEraserMode.current = true;
+    setIsEraser(true);
+  },[])
+
   return(
     <>
-      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear}/>
+      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode}/>
       <canvas
         className="canvas__drawpad"
         onMouseDown={startDrawing}
