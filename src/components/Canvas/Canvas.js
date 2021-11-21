@@ -9,9 +9,12 @@ function Canvas() {
 
   const [ isDrawing, setIsDrawing ] = useState(false);
   const [currentColor, setCurrentColor] = useState("#000000");
+  const [currentWidth, setCurrentWidth] = useState(5);
 
   const selectedColor = useRef("#000000");
-  
+  const selectedLineWidth = useRef(5);
+  const direction = useRef(true);
+
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -35,15 +38,29 @@ function Canvas() {
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
     contextRef.current.strokeStyle = selectedColor.current;
+    contextRef.current.lineWidth = selectedLineWidth.current;
     setCurrentColor(selectedColor.current);
+    dynamicLineWidth(selectedLineWidth.current);
+
 
     setIsDrawing(true);
   }
 
+  const dynamicLineWidth = useCallback(() =>{
+    if(!contextRef || !contextRef.current) return;
+
+    if(contextRef.current.lineWidth > 90 || contextRef.current.lineWidth <10){
+      direction.current = !direction.current;
+    }
+
+    direction.current ? contextRef.current.lineWidth++ : contextRef.current.lineWidth--;
+    setCurrentWidth(contextRef.current.lineWidth);
+  },[]);
+
   const finishDrawing = () => {
     contextRef.current.closePath();
     setIsDrawing(false);
-  }
+  };
 
   const draw = ({ nativeEvent }) => {
     if (!isDrawing) {
@@ -53,17 +70,31 @@ function Canvas() {
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke()
-  }
+  };
 
   const handleColor =(e) =>{
     setCurrentColor(e.currentTarget.value);
     selectedColor.current = e.currentTarget.value;
-  }
+  };
+
+  const handleWidth = (e) => {
+    setCurrentWidth(e.currentTarget.value);
+    selectedLineWidth.current = e.currentTarget.value;
+  };
+
+  const handleClear = useCallback(() => {
+    if(!contextRef || !contextRef.current || !canvasRef || !canvasRef.current){
+      return;
+    }
+    contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+  },[])
 
   return(
     <>
-      <Toolbar handleColor={handleColor}/>
-      <canvas 
+      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear}/>
+      <canvas
+        className="canvas__drawpad"
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}
