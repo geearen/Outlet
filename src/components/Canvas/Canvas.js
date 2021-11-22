@@ -125,14 +125,16 @@ function Canvas() {
   return(
     <>
       <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
-      <canvas
-        className="canvas__drawpad"
-        onMouseDown={startDrawing}
-        onMouseUp={finishDrawing}
-        onMouseMove={draw}
-        ref={canvasRef}
-        style={{border:'1px solid black'}}
-      />
+      <div className="canvas__drawpad">
+
+        <canvas
+          onMouseDown={startDrawing}
+          onMouseUp={finishDrawing}
+          onMouseMove={draw}
+          ref={canvasRef}
+          style={{border:'1px solid black'}}
+        />
+      </div>
     </>
   )
 }
