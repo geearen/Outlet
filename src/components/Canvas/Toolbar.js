@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal  from './Modal/Modal';
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 
 function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleDownload, dataUrl  }) {
+
+  const [modalState, setModalState] = useState(false);
+  
+
+  const modalOpen =() =>{
+    setModalState(true)
+  }
+
+  const modalClose = () => {
+    setModalState(false)
+  }
+
   return (
     <div className="toolbar">
       <div className="toolbar__color">
@@ -40,6 +53,13 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
       </div>
 
       <div className="toolbar__clear">
+        <Modal modalState={modalState} modalClose={modalClose}>
+          <div>
+            <h3> Are you sure you want to clear? </h3>
+            <h4>Yes</h4>
+            <h4>No</h4>
+          </div>
+        </Modal>
         <button onClick={handleClear}>
           <MdIcons.MdClear className="toolbar-icons" />
           Clear Canvas
