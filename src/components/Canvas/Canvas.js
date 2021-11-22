@@ -8,14 +8,14 @@ function Canvas() {
   const contextRef = useRef(null);
   
 
-  const [ isDrawing, setIsDrawing ] = useState(false);
+  const [isDrawing, setIsDrawing] = useState(false);
   const [isPaint, setIsPaint] = useState(false);
   const [isEraser, setIsEraser] = useState(false);
-  const [currentColor, setCurrentColor] = useState("#000000");
+  const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
   const [dataUrl, setDataUrl] = useState('#')
 
-  const selectedColor = useRef("#000000");
+  const selectedColor = useRef('#000000');
   const selectedLineWidth = useRef(5);
   const direction = useRef(true);
   const isPaintMode= useRef(false);
@@ -51,7 +51,7 @@ function Canvas() {
     dynamicLineWidth(selectedLineWidth.current);
 
     if(isPaintMode.current || isEraserMode.current){
-      isEraserMode.current ? (contextRef.current.globalCompositeOperation ="destination-out") :(contextRef.current.globalCompositeOperation = "source-over");
+      isEraserMode.current ? (contextRef.current.globalCompositeOperation ='destination-out') :(contextRef.current.globalCompositeOperation = 'source-over');
 
     }
 
@@ -119,13 +119,13 @@ function Canvas() {
   const handleDownload = useCallback(() =>{
     if(!canvasRef || !canvasRef.current) return;
 
-    setDataUrl(canvasRef.current.toDataURL("image/png"));
+    setDataUrl(canvasRef.current.toDataURL('image/png'));
   },[canvasRef]);
 
   return(
     <>
-      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
-      <div className="canvas__drawpad">
+      <Toolbar className='canvas__toolbar' handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
+      <div className='canvas__drawpad'>
 
         <canvas
           onMouseDown={startDrawing}
