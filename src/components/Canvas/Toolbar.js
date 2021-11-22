@@ -1,5 +1,6 @@
-
-import React from 'react'
+import React from 'react';
+import * as FaIcons from "react-icons/fa";
+import * as MdIcons from "react-icons/md";
 
 function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleDownload, dataUrl  }) {
   return (
@@ -18,23 +19,32 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
         />
       </div>
 
-      <div className="toolbar__clear">
-        <button onClick={handleClear}> Clear </button>
+      <div className="toolbar__paint">
+        <button onClick={handlePaintMode} className="">
+          <FaIcons.FaPaintBrush className="toolbar-icons" />
+        </button>
       </div>
 
       <div className="toolbar__eraser">
-        <button onClick={handleEraserMode}> Eraser</button>
-      </div>
-
-      <div className="toolbar__paint"> 
-        <button onClick={handlePaintMode}>Paint</button>
+        <button onClick={handleEraserMode}>
+          <FaIcons.FaEraser className="toolbar-icons" />
+        </button>
       </div>
 
       <div className="toolbar__download">
-        <a download="image.png" onClick={handleDownload} href={dataUrl}> Save Image</a>
+        <a download="image.png" onClick={handleDownload} href={dataUrl}>
+          {" "}
+          <FaIcons.FaRegSave className="toolbar-icons" />
+          Save Image
+        </a>
       </div>
-      
-      
+
+      <div className="toolbar__clear">
+        <button onClick={handleClear}>
+          <MdIcons.MdClear className="toolbar-icons" />
+          Clear Canvas
+        </button>
+      </div>
     </div>
   );
 }

@@ -67,9 +67,19 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .footer .footer__icon__container .footer__icon { padding: 0 20px; }
 
-.color-option { width: 50px; height: 50px; }
+.canvas { background-color: #010206; }
 
-.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 1rem; margin: 1rem; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.canvas .canvas__logo > img { width: 100px; height: auto; margin: 1rem; }
+
+.canvas .canvas__drawpad { background-color: white; padding: 0.8rem; }
+
+.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; margin: 0 20%; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border: 2px solid #f5fdfd; background-color: #f5fdfd; width: 80rem; border-radius: 2px; padding: 1rem; font-family: "Manrope", sans-serif; }
+
+.toolbar > * { padding: 0.5rem; }
+
+.toolbar .color-option { width: 50px; height: 50px; }
+
+.toolbar button { padding: 5px; font-size: 1rem; font-family: "Manrope", sans-serif; }
 
 * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0px; margin: 0px; }
 /*# sourceMappingURL=main.css.map */
