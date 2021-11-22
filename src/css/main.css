@@ -57,7 +57,7 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .developer__about a:hover { color: #37b4d4; -webkit-transform: scale(1.2); transform: scale(1.2); }
 
-.developer__portrait img { width: 250px; height: 300px; -o-object-fit: cover; object-fit: cover; border: 1px solid #492d76; border-radius: 3px; -webkit-box-shadow: 0 0 15px 7px #492d76; box-shadow: 0 0 15px 7px #492d76; }
+.developer__portrait img { width: 250px; height: 300px; -o-object-fit: cover; object-fit: cover; border-radius: 3px; -webkit-box-shadow: 0 0 15px 7px #492d76; box-shadow: 0 0 15px 7px #492d76; }
 
 @media screen and (max-width: 960px) { .developer__profile { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; } }
 
