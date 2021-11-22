@@ -8,18 +8,20 @@ function Canvas() {
   const contextRef = useRef(null);
   
 
-  const [ isDrawing, setIsDrawing ] = useState(false);
+  const [isDrawing, setIsDrawing] = useState(false);
   const [isPaint, setIsPaint] = useState(false);
+  const [isLine, setIsLine] = useState(false);
   const [isEraser, setIsEraser] = useState(false);
-  const [currentColor, setCurrentColor] = useState("#000000");
+  const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
   const [dataUrl, setDataUrl] = useState('#')
 
-  const selectedColor = useRef("#000000");
+  const selectedColor = useRef('#000000');
   const selectedLineWidth = useRef(5);
   const direction = useRef(true);
   const isPaintMode= useRef(false);
   const isEraserMode = useRef(false);
+  const isLineMode = useRef(false);
 
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
@@ -39,47 +41,55 @@ function Canvas() {
     contextRef.current = context;
   }, [])
 
-  const startDrawing = useCallback((e) => {
-    const { offsetX, offsetY } = e;
-
+  const startDrawing = useCallback(({ nativeEvent }) => {
+    const { offsetX, offsetY } = nativeEvent;
 
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
+    
     contextRef.current.strokeStyle = selectedColor.current;
     contextRef.current.lineWidth = selectedLineWidth.current;
     setCurrentColor(selectedColor.current);
     dynamicLineWidth(selectedLineWidth.current);
-
-    if(isPaintMode.current || isEraserMode.current){
-      isEraserMode.current ? (contextRef.current.globalCompositeOperation ="destination-out") :(contextRef.current.globalCompositeOperation = "source-over");
-
+    
+    if(isPaintMode.current || isLineMode.current || isEraserMode.current){
+      isEraserMode.current ? (contextRef.current.globalCompositeOperation ='destination-out') :(contextRef.current.globalCompositeOperation = 'source-over')
     }
-
+    
     setIsDrawing(true);
   },[]);
 
   const dynamicLineWidth = useCallback(() =>{
     if(!contextRef || !contextRef.current) return;
 
-    if(contextRef.current.lineWidth > 90 || contextRef.current.lineWidth <10){
+    if(contextRef.current.lineWidth >= 100 || contextRef.current.lineWidth <= 5){
       direction.current = !direction.current;
     }
 
-    direction.current ? contextRef.current.lineWidth++ : contextRef.current.lineWidth--;
     setCurrentWidth(contextRef.current.lineWidth);
   },[]);
 
-  const finishDrawing = () => {
+  const finishDrawing = ({ nativeEvent }) => {
+    const { offsetX, offsetY } = nativeEvent;
+    
+    if (isLine) {
+      contextRef.current.lineTo(offsetX, offsetY);
+      contextRef.current.stroke();
+      setIsDrawing(false);
+      return
+    }
+    
     contextRef.current.closePath();
     setIsDrawing(false);
   };
 
   const draw = ({ nativeEvent }) => {
-    if (!isDrawing) {
+    if (!isDrawing || isLine) {
       return
     }
 
     const { offsetX, offsetY } = nativeEvent;
+
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke()
   };
@@ -90,7 +100,6 @@ function Canvas() {
   };
 
   const handleWidth = (e) => {
-    setCurrentWidth(e.currentTarget.value);
     selectedLineWidth.current = e.currentTarget.value;
   };
 
@@ -106,26 +115,38 @@ function Canvas() {
   const handlePaintMode = useCallback(() =>{
     setIsPaint(true);
     isEraserMode.current = false;
+    setIsLine(false);
+    isLineMode.current = false
     setIsEraser(false);
     isPaintMode.current = true;
+  },[])
+
+  const handleLineMode = useCallback(() => {
+    setIsLine(true);
+    isLineMode.current = true;
+    setIsEraser(false);
+    isEraserMode.current = false;
+    setIsPaint(false);
+    isPaintMode.current = false;
   },[])
   
   const handleEraserMode = useCallback(()=>{
     setIsPaint(true);
     isEraserMode.current = true;
     setIsEraser(true);
-  },[])
+    setIsLine(false);
+  })
 
   const handleDownload = useCallback(() =>{
     if(!canvasRef || !canvasRef.current) return;
 
-    setDataUrl(canvasRef.current.toDataURL("image/png"));
+    setDataUrl(canvasRef.current.toDataURL('image/png'));
   },[canvasRef]);
 
   return(
     <>
-      <Toolbar className="canvas__toolbar" handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
-      <div className="canvas__drawpad">
+      <Toolbar className='canvas__toolbar' handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleLineMode={handleLineMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
+      <div className='canvas__drawpad'>
 
         <canvas
           onMouseDown={startDrawing}

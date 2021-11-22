@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Modal  from './Modal/Modal';
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
+import * as AiIcons from 'react-icons/ai'
 
-function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleDownload, dataUrl  }) {
+
+function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleLineMode, handleDownload, dataUrl  }) {
 
   const [modalState, setModalState] = useState(false);
   
@@ -15,6 +17,7 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
   const modalClose = () => {
     setModalState(false)
   }
+
 
   return (
     <div className="toolbar">
@@ -35,6 +38,12 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
       <div className="toolbar__paint">
         <button onClick={handlePaintMode} className="">
           <FaIcons.FaPaintBrush className="toolbar-icons" />
+        </button>
+      </div>
+      
+      <div className="toolbar__line">
+        <button onClick={handleLineMode} className="">
+          <AiIcons.AiOutlineMenu className="toolbar-icons" />
         </button>
       </div>
 
