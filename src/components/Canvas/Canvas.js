@@ -7,10 +7,10 @@ function Canvas() {
   const canvasRef = useRef(null); 
   const contextRef = useRef(null);
   
-
   const [isDrawing, setIsDrawing] = useState(false);
   const [isPaint, setIsPaint] = useState(false);
   const [isLine, setIsLine] = useState(false);
+  const [isRectangle, setIsRectangle] = useState(false);
   const [isEraser, setIsEraser] = useState(false);
   const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
@@ -22,6 +22,9 @@ function Canvas() {
   const isPaintMode= useRef(false);
   const isEraserMode = useRef(false);
   const isLineMode = useRef(false);
+  const isRectangleMode = useRef(false);
+  const lastX = useRef(0);
+  const lastY = useRef(0);
 
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
@@ -44,15 +47,19 @@ function Canvas() {
   const startDrawing = useCallback(({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
 
+    if (isRectangleMode.current || isRectangle) {
+      lastX.current = offsetX;
+      lastY.current = offsetY;
+    }
+    
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
-    
     contextRef.current.strokeStyle = selectedColor.current;
     contextRef.current.lineWidth = selectedLineWidth.current;
     setCurrentColor(selectedColor.current);
     dynamicLineWidth(selectedLineWidth.current);
     
-    if(isPaintMode.current || isLineMode.current || isEraserMode.current){
+    if(isPaintMode.current || isEraserMode.current){
       isEraserMode.current ? (contextRef.current.globalCompositeOperation ='destination-out') :(contextRef.current.globalCompositeOperation = 'source-over')
     }
     
@@ -77,6 +84,15 @@ function Canvas() {
       contextRef.current.stroke();
       setIsDrawing(false);
       return
+    } 
+
+    if (isRectangle) {
+      const width = offsetX - lastX.current;
+      const height = offsetY - lastY.current;
+
+      contextRef.current.strokeRect(lastX.current, lastY.current, width, height);
+      setIsDrawing(false);
+      return;
     }
     
     contextRef.current.closePath();
@@ -84,7 +100,7 @@ function Canvas() {
   };
 
   const draw = ({ nativeEvent }) => {
-    if (!isDrawing || isLine) {
+    if (!isDrawing || isLine || isRectangle) {
       return
     }
 
@@ -114,27 +130,43 @@ function Canvas() {
 
   const handlePaintMode = useCallback(() =>{
     setIsPaint(true);
-    isEraserMode.current = false;
+    isPaintMode.current = true;
     setIsLine(false);
     isLineMode.current = false
+    setIsRectangle(false);
+    isRectangleMode.current = false;
     setIsEraser(false);
-    isPaintMode.current = true;
+    isEraserMode.current = false;
   },[])
 
   const handleLineMode = useCallback(() => {
     setIsLine(true);
     isLineMode.current = true;
-    setIsEraser(false);
-    isEraserMode.current = false;
     setIsPaint(false);
     isPaintMode.current = false;
+    setIsRectangle(false);
+    isRectangleMode.current = false;
+    setIsEraser(false);
+    isEraserMode.current = false;
   },[])
   
+  const handleRectangleMode = useCallback(() => {
+    setIsRectangle(true);
+    isRectangleMode.current = true;
+    setIsLine(false);
+    isLineMode.current = false;
+    setIsPaint(false);
+    isPaintMode.current = false;
+    setIsEraser(false);
+    isEraserMode.current = false;
+  },[])
+
   const handleEraserMode = useCallback(()=>{
     setIsPaint(true);
     isEraserMode.current = true;
     setIsEraser(true);
     setIsLine(false);
+    setIsRectangle(false);
   })
 
   const handleDownload = useCallback(() =>{
@@ -145,7 +177,7 @@ function Canvas() {
 
   return(
     <>
-      <Toolbar className='canvas__toolbar' handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleLineMode={handleLineMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
+      <Toolbar className='canvas__toolbar' handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleLineMode={handleLineMode} handleRectangleMode={handleRectangleMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
       <div className='canvas__drawpad'>
 
         <canvas
