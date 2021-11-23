@@ -91,8 +91,6 @@ function Canvas() {
       const height = offsetY - lastY.current;
 
       contextRef.current.strokeRect(lastX.current, lastY.current, width, height);
-      console.log(`THIS IS THE WIDTH: ${width}. THIS IS THE HEIGHT ${height}`);
-      console.log(`height??? ${lastY.current - offsetY}`)
       setIsDrawing(false);
       return;
     }
