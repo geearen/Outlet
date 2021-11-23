@@ -2,7 +2,7 @@ export const DeveloperData = [
   {
     name: "Lonna Lu",
     github: "https://github.com/Luna5678",
-    email: "lonna.dev@gmail.com",
+    email: "mailto:lonna.dev@gmail.com",
     portfolio: "https://lonnalu.com",
     portrait: "https://thesource.com/wp-content/uploads/2021/11/FDIXJ42WQAAy9eV.jpeg",
     linkedin: "https://www.linkedin.com/in/lonna-lu/",
@@ -11,7 +11,7 @@ export const DeveloperData = [
   {
     name: "Allen Gonzales",
     github: "https://github.com/geearen",
-    email: "allengonzales018@gmail.com",
+    email: "mailto:allengonzales018@gmail.com",
     portfolio: "https://geearen.com/",
     portrait:
       "https://res.cloudinary.com/dsxis0hux/image/upload/v1637386168/pics/20201227-MRJ01356_barxvr.jpg",
