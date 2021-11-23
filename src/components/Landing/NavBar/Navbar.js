@@ -22,14 +22,16 @@ function Navbar(){
           {NavbarData.map((item, idx) => {
           return(
             <li key={idx} className='nav-item'>
-              <Link to={{pathname:item.pathname, hash:item.hash}}  onClick={closeMobileMenu}>
-                {item.title}
-                {
-                  item.icon 
-                  ? <span className='nav-item-icon'>{item.icon}</span> 
-                  : ''
-                }
+              {item.hash
+                ? <a href={item.hash}>{item.title}</a> 
+                : <Link to={item.pathname}  onClick={closeMobileMenu}>
+                  {
+                    item.icon 
+                    ? <span className='nav-item-icon'>{item.icon}</span> 
+                    : ''
+                  }
               </Link>
+              }
             </li>
           )
         })}

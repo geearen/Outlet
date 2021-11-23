@@ -3,13 +3,13 @@ import * as FaIcons from 'react-icons/fa'
 export const NavbarData = [
   {
     title: "Outlet",
-    pathname: "/",
+    pathname: "",
     hash: "#about-outlet",
     className: "nav-item",
   },
   {
     title: "The Devs",
-    pathname: "/",
+    pathname: "",
     hash: "#developers",
     className: "nav-item",
   },
