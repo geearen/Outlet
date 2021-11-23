@@ -13,6 +13,7 @@ function Toolbar({
   handlePaintMode,
   handleLineMode,
   handleRectangleMode,
+  handleCircleMode,
   handleDownload,
   dataUrl,
   modalOpen,
@@ -48,6 +49,12 @@ function Toolbar({
       <div className="toolbar__rectangle">
         <button onClick={handleRectangleMode} className="">
           <BiIcons.BiRectangle className="toolbar-icons" />
+        </button>
+      </div>
+
+      <div className="toolbar__circle">
+        <button onClick={handleCircleMode} className="">
+          <BiIcons.BiCircle className="toolbar-icons" />
         </button>
       </div>
 
