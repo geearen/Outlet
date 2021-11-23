@@ -11,6 +11,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const [isPaint, setIsPaint] = useState(false);
   const [isLine, setIsLine] = useState(false);
   const [isRectangle, setIsRectangle] = useState(false);
+  const [isCircle, setIsCircle] = useState(false);
   const [isEraser, setIsEraser] = useState(false);
   const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
@@ -23,6 +24,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const isEraserMode = useRef(false);
   const isLineMode = useRef(false);
   const isRectangleMode = useRef(false);
+  const isCircleMode = useRef(false);
   const lastX = useRef(0);
   const lastY = useRef(0);
 
@@ -47,7 +49,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const startDrawing = useCallback(({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
 
-    if (isRectangleMode.current || isRectangle) {
+    if (isRectangleMode.current || isRectangle || isCircleMode.current) {
       lastX.current = offsetX;
       lastY.current = offsetY;
     }
@@ -83,7 +85,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
       contextRef.current.lineTo(offsetX, offsetY);
       contextRef.current.stroke();
       setIsDrawing(false);
-      return
+      return;
     } 
 
     if (isRectangle) {
@@ -94,17 +96,26 @@ function Canvas({modalState, modalClose, modalOpen}) {
       setIsDrawing(false);
       return;
     }
+
+    if(isCircle){
+      const radius = Math.sqrt(Math.pow((offsetX-lastX.current), 2) + Math.pow((offsetY-lastY.current), 2))
+      contextRef.current.arc(lastX.current, lastY.current, radius, 0, 2*Math.PI);
+      contextRef.current.stroke();
+      setIsDrawing(false);
+      return;
+    }
     
     contextRef.current.closePath();
     setIsDrawing(false);
   };
 
   const draw = ({ nativeEvent }) => {
-    if (!isDrawing || isLine || isRectangle) {
+    if (!isDrawing || isLine || isRectangle || isCircle) {
       return
     }
 
     const { offsetX, offsetY } = nativeEvent;
+
 
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke()
@@ -119,7 +130,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     selectedLineWidth.current = e.currentTarget.value;
   };
 
-  //@desc will reset / clear the canvas
+  //@desc will reset / clear the canvas and close modal popup
   const handleClear = useCallback(() => {
     if(!contextRef || !contextRef.current || !canvasRef || !canvasRef.current){
       return;
@@ -135,6 +146,8 @@ function Canvas({modalState, modalClose, modalOpen}) {
     isLineMode.current = false
     setIsRectangle(false);
     isRectangleMode.current = false;
+    setIsCircle(false);
+    isCircleMode.current = false;
     setIsEraser(false);
     isEraserMode.current = false;
   },[])
@@ -146,6 +159,8 @@ function Canvas({modalState, modalClose, modalOpen}) {
     isPaintMode.current = false;
     setIsRectangle(false);
     isRectangleMode.current = false;
+    setIsCircle(false);
+    isCircleMode.current = false;
     setIsEraser(false);
     isEraserMode.current = false;
   },[])
@@ -153,6 +168,21 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const handleRectangleMode = useCallback(() => {
     setIsRectangle(true);
     isRectangleMode.current = true;
+    setIsLine(false);
+    isLineMode.current = false;
+    setIsPaint(false);
+    isPaintMode.current = false;
+    setIsCircle(false);
+    isCircleMode.current = false;
+    setIsEraser(false);
+    isEraserMode.current = false;
+  },[])
+
+  const handleCircleMode = useCallback(()=>{
+    setIsCircle(true);
+    isCircleMode.current = true;
+    setIsRectangle(false);
+    isRectangleMode.current = false;
     setIsLine(false);
     isLineMode.current = false;
     setIsPaint(false);
@@ -167,7 +197,8 @@ function Canvas({modalState, modalClose, modalOpen}) {
     setIsEraser(true);
     setIsLine(false);
     setIsRectangle(false);
-  })
+  },[])
+
 
   const handleDownload = useCallback(() =>{
     if(!canvasRef || !canvasRef.current) return;
@@ -186,6 +217,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
         handlePaintMode={handlePaintMode}
         handleLineMode={handleLineMode}
         handleRectangleMode={handleRectangleMode}
+        handleCircleMode={handleCircleMode}
         handleEraserMode={handleEraserMode}
         handleDownload={handleDownload}
         modalOpen={modalOpen}
