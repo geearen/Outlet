@@ -201,6 +201,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     setIsEraser(true);
     setIsLine(false);
     setIsRectangle(false);
+    setIsCircle(false);
   },[])
 
 
