@@ -5,20 +5,17 @@ import * as MdIcons from "react-icons/md";
 import * as AiIcons from 'react-icons/ai'
 
 
-function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleLineMode, handleDownload, dataUrl  }) {
-
-  const [modalState, setModalState] = useState(false);
-  
-
-  const modalOpen =() =>{
-    setModalState(true)
-  }
-
-  const modalClose = () => {
-    setModalState(false)
-  }
-
-
+function Toolbar({
+  handleColor,
+  handleWidth,
+  handleClear,
+  handleEraserMode,
+  handlePaintMode,
+  handleLineMode,
+  handleDownload,
+  dataUrl,
+  modalOpen,
+}) {
   return (
     <div className="toolbar">
       <div className="toolbar__color">
@@ -40,7 +37,7 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
           <FaIcons.FaPaintBrush className="toolbar-icons" />
         </button>
       </div>
-      
+
       <div className="toolbar__line">
         <button onClick={handleLineMode} className="">
           <AiIcons.AiOutlineMenu className="toolbar-icons" />
@@ -62,14 +59,7 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
       </div>
 
       <div className="toolbar__clear">
-        <Modal modalState={modalState} modalClose={modalClose}>
-          <div>
-            <h3> Are you sure you want to clear? </h3>
-            <h4>Yes</h4>
-            <h4>No</h4>
-          </div>
-        </Modal>
-        <button onClick={handleClear}>
+        <button onClick={modalOpen}>
           <MdIcons.MdClear className="toolbar-icons" />
           Clear Canvas
         </button>

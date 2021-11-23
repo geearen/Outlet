@@ -22,7 +22,7 @@ function Navbar(){
           {NavbarData.map((item, idx) => {
           return(
             <li key={idx} className='nav-item'>
-              <Link to={item.path} onClick={closeMobileMenu}>
+              <Link to={{pathname:item.pathname, hash:item.hash}}  onClick={closeMobileMenu}>
                 {item.title}
                 {
                   item.icon 

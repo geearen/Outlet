@@ -81,5 +81,35 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .toolbar button { padding: 5px; font-size: 1rem; font-family: "Manrope", sans-serif; }
 
+.modal { background-color: rgba(1, 2, 6, 0.8); position: fixed; display: none; z-index: 1; left: 0; right: 0; width: 100%; height: 100%; }
+
+.modal-show { display: block; }
+
+.modal-hide { display: none; }
+
+.modal-container { position: absolute; margin: 0 10%; width: 30rem; height: 12%; background: #f5fdfd; left: 25%; top: 30%; padding: 35px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-shadow: 5px 5px 1px 1px #f6c079; box-shadow: 5px 5px 1px 1px #f6c079; border-radius: 5px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-animation-name: animatetop; animation-name: animatetop; -webkit-animation-duration: 0.4s; animation-duration: 0.4s; }
+
+.modal-container .modal-content { font-family: "Manrope", sans-serif; }
+
+.modal-container .modal-content .modal-button { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.modal-container .modal-content button { font-family: "Manrope", sans-serif; font-size: 15px; padding: 10px; margin: 8px 8px; border: none; border-radius: 5px; width: 80px; }
+
+.modal-container #modal-yes:hover { -webkit-transform: scale(1.05); transform: scale(1.05); background-color: red; }
+
+.modal-container #modal-no:hover { -webkit-transform: scale(1.05); transform: scale(1.05); background-color: #f6c079; }
+
+@-webkit-keyframes animatetop { from { top: -300;
+    opacity: 0; }
+  to { top: 30%;
+    opacity: 1; } }
+
+@keyframes animatetop { from { top: -300;
+    opacity: 0; }
+  to { top: 30%;
+    opacity: 1; } }
+
 * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0px; margin: 0px; }
+
+html { scroll-behavior: smooth; }
 /*# sourceMappingURL=main.css.map */

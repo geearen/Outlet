@@ -1,8 +1,8 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import Toolbar from './Toolbar';
+import Modal from './Modal/Modal';
 
-
-function Canvas() {
+function Canvas({modalState, modalClose, modalOpen}) {
   // @desc ref object that holds the reference to our canvas element. ref objects can store references to elements AND to preserve any kind of info we need between rerenders
   const canvasRef = useRef(null); 
   const contextRef = useRef(null);
@@ -109,7 +109,7 @@ function Canvas() {
       return;
     }
     contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-
+    modalClose();
   },[])
 
   const handlePaintMode = useCallback(() =>{
@@ -143,21 +143,41 @@ function Canvas() {
     setDataUrl(canvasRef.current.toDataURL('image/png'));
   },[canvasRef]);
 
-  return(
-    <>
-      <Toolbar className='canvas__toolbar' handleColor={handleColor} handleWidth={handleWidth} handleClear={handleClear} handlePaintMode={handlePaintMode} handleLineMode={handleLineMode} handleEraserMode={handleEraserMode} handleDownload={handleDownload} dataUrl={dataUrl}/>
-      <div className='canvas__drawpad'>
 
+  return (
+    <>
+      <Toolbar
+        className="canvas__toolbar"
+        handleColor={handleColor}
+        handleWidth={handleWidth}
+        handleClear={handleClear}
+        handlePaintMode={handlePaintMode}
+        handleLineMode={handleLineMode}
+        handleEraserMode={handleEraserMode}
+        handleDownload={handleDownload}
+        modalOpen={modalOpen}
+        dataUrl={dataUrl}
+      />
+      <Modal modalState={modalState} modalClose={modalClose}>
+        <div className="modal-content">
+          <h3> Are you sure you want to clear? </h3>
+          <div className="modal-button">
+            <button onClick={handleClear} id="modal-yes">Yes</button>
+            <button onClick={modalClose} id="modal-no"> No </button>
+          </div>
+        </div>
+      </Modal>
+      <div className="canvas__drawpad">
         <canvas
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
           ref={canvasRef}
-          style={{border:'1px solid black'}}
+          style={{ border: "1px solid black" }}
         />
       </div>
     </>
-  )
+  );
 }
 
 export default Canvas;

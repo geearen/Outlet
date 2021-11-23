@@ -6,7 +6,7 @@ import * as FaIcons from 'react-icons/fa';
 function Developer(){
   
   return(
-    <div className='developers'>
+    <div className='developers' id="developers">
       <Heading title='Meet the Developers' />
 
       <div className="developers__container">

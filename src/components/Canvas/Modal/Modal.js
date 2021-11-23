@@ -1,11 +1,13 @@
 import React from 'react'
 
-function Modal({handleClose, modalState}) {
-  return(
-    <div>
-      <div className="modal-container">
+function Modal({ modalState, children}) {
+  const showHideClassName = modalState ? "modal modal-show" :"modal modal-hide";
 
-        <a href="javascript:;" className="modal-close" onClick={handleClose}></a>
+  return(
+    <div className={showHideClassName}>
+      <div className="modal-container">
+        {children}
+        
       </div>
     </div>
   )

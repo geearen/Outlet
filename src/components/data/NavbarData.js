@@ -2,19 +2,22 @@ import * as FaIcons from 'react-icons/fa'
 
 export const NavbarData = [
   {
-    title: 'Outlet',
-    path: '/',
-    className: 'nav-item'
+    title: "Outlet",
+    pathname: "/",
+    hash: "#about-outlet",
+    className: "nav-item",
   },
   {
-    title: 'The Devs',
-    path: '/',
-    className: 'nav-item'
+    title: "The Devs",
+    pathname: "/",
+    hash: "#developers",
+    className: "nav-item",
   },
   {
-    title: 'Draw',
-    path: '/canvas',
+    title: "Draw",
+    pathname: "/canvas",
+    hash: "",
     icon: <FaIcons.FaPencilAlt />,
-    className: 'nav-item'
-  }
-]
+    className: "nav-item",
+  },
+];
