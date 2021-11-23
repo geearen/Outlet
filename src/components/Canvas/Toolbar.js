@@ -1,9 +1,10 @@
 import React from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
-import * as AiIcons from 'react-icons/ai'
+import * as AiIcons from 'react-icons/ai';
+import * as BiIcons from 'react-icons/bi'
 
-function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleLineMode, handleDownload, dataUrl  }) {
+function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, handlePaintMode, handleLineMode, handleRectangleMode, handleDownload, dataUrl  }) {
   return (
     <div className="toolbar">
       <div className="toolbar__color">
@@ -29,6 +30,12 @@ function Toolbar({ handleColor, handleWidth, handleClear, handleEraserMode, hand
       <div className="toolbar__line">
         <button onClick={handleLineMode} className="">
           <AiIcons.AiOutlineMenu className="toolbar-icons" />
+        </button>
+      </div>
+      
+      <div className="toolbar__rectangle">
+        <button onClick={handleRectangleMode} className="">
+          <BiIcons.BiRectangle className="toolbar-icons" />
         </button>
       </div>
 
