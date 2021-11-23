@@ -48,14 +48,18 @@ function Canvas({modalState, modalClose, modalOpen}) {
 
   const startDrawing = useCallback(({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
+    
+    contextRef.current.beginPath();
+    
+    if(isLineMode.current) {
+      contextRef.current.moveTo(offsetX, offsetY);
+    }
 
     if (isRectangleMode.current || isRectangle || isCircleMode.current) {
       lastX.current = offsetX;
       lastY.current = offsetY;
     }
     
-    contextRef.current.beginPath();
-    contextRef.current.moveTo(offsetX, offsetY);
     contextRef.current.strokeStyle = selectedColor.current;
     contextRef.current.lineWidth = selectedLineWidth.current;
     setCurrentColor(selectedColor.current);
