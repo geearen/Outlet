@@ -18,7 +18,8 @@ function CanvasPage(){
       <div className="canvas">
         <div className="canvas__logo">
           <a href="/" className="canvas-logo-alink">
-            <img src={OutletLogo} alt="outlet logo" /> UTLET
+            <img src={OutletLogo} alt="outlet logo" />
+            <span>UTLET</span>
           </a>
         </div>
         <Canvas
@@ -26,7 +27,6 @@ function CanvasPage(){
           modalClose={modalClose}
           modalState={modalState}
         />
-        
       </div>
     </>
   );

@@ -25,6 +25,19 @@
     color: $mellow-apricot;
     text-decoration: none;
     font-size: 3rem;
+    display: flex;
+    align-items: center;
+    transition: transform 300ms;
+    span{
+      letter-spacing: 2px;
+      margin-left: 5px;
+      animation: glowtext 1s ease-in-out infinite alternate;
+    }
+
+  }
+  .canvas-logo-alink:hover{
+    transform: translateY(-10px);
+    filter: drop-shadow(2px 2px 2px $mellow-apricot);
   }
 
   
@@ -39,5 +52,14 @@
       background-color: white;
       
     }
+  }
+}
+
+@keyframes glowtext{
+  from{
+    text-shadow: 0 0 1px $mellow-apricot;
+  }
+  to{
+    text-shadow: 0 0 20px $mellow-apricot;
   }
 }

@@ -115,6 +115,11 @@ function Canvas({modalState, modalClose, modalOpen}) {
     setIsDrawing(false);
   };
 
+  // const onMouseLeave = () =>{
+  //   contextRef.current.closePath();
+  //   setIsDrawing(false);
+  // }
+
   const draw = ({ nativeEvent }) => {
     if (!isDrawing || isLine || isRectangle || isCircle) {
       return
@@ -249,7 +254,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
-          onMouseLeave={finishDrawing}
+          // onMouseLeave={onMouseLeave}
           ref={canvasRef}
           style={{ border: "2px solid black" }}
         />
