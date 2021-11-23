@@ -20,20 +20,24 @@ function Navbar(){
       </div>
       <ul className={showMobileMenu ? 'nav-menu active' : 'nav-menu'}>
           {NavbarData.map((item, idx) => {
-          return(
-            <li key={idx} className='nav-item'>
-              {item.hash
-                ? <a href={item.hash}>{item.title}</a> 
-                : <Link to={item.pathname}  onClick={closeMobileMenu}>
-                  {
-                    item.icon 
-                    ? <span className='nav-item-icon'>{item.icon}</span> 
-                    : ''
-                  }
-              </Link>
-              }
+          return (
+            <li key={idx} className="nav-item">
+              {item.hash ? (
+                <a href={item.hash}>{item.title}</a>
+              ) : (
+                
+                <Link to={item.pathname} onClick={closeMobileMenu}>
+                  {item.title}
+                  {item.icon ? (
+                    <span className="nav-item-icon">{item.icon}</span>
+                  ) : (
+                    ""
+                  )}
+                </Link>
+                
+              )}
             </li>
-          )
+          );
         })}
       </ul>
     </nav>
