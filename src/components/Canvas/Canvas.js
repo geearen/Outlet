@@ -87,10 +87,12 @@ function Canvas() {
     } 
 
     if (isRectangle) {
-      const width = Math.abs(lastX.current - offsetX);
-      const height = Math.abs(lastY.current - offsetY);
+      const width = offsetX - lastX.current;
+      const height = offsetY - lastY.current;
 
       contextRef.current.strokeRect(lastX.current, lastY.current, width, height);
+      console.log(`THIS IS THE WIDTH: ${width}. THIS IS THE HEIGHT ${height}`);
+      console.log(`height??? ${lastY.current - offsetY}`)
       setIsDrawing(false);
       return;
     }
