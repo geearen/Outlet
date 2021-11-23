@@ -2,7 +2,7 @@ import Heading from '../Heading/Heading';
 
 function AboutOutlet() {
   return(
-    <div className='about-outlet'>
+    <div className='about-outlet' id="about-outlet">
       <Heading title='Draw With Outlet' />
 
       <div className="about__description">

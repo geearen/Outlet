@@ -9,9 +9,14 @@
 @import "../components/Landing/Footer/footer";
 @import "../pages/canvasPage";
 @import "../components/Canvas/toolbar";
+@import "../components/Canvas/Modal/modal";
 
 * {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+}
+
+html{
+  scroll-behavior: smooth;
 }
