@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import Toolbar from './Toolbar';
+import Toolbar from '../Canvas/Toolbar/Toolbar'
 import Modal from './Modal/Modal';
 
 function Canvas({modalState, modalClose, modalOpen}) {
@@ -33,7 +33,9 @@ function Canvas({modalState, modalClose, modalOpen}) {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
+    // canvas.style.width = `${document.body.clientWidth}px`;
     canvas.style.width = `${document.body.clientWidth}px`;
+
     canvas.style.height = `${window.innerHeight}px`;
 
     // @desc context to allow us to draw on canvas which is needed in startDrawing, finish, and draw
@@ -232,8 +234,13 @@ function Canvas({modalState, modalClose, modalOpen}) {
         <div className="modal-content">
           <h3> Are you sure you want to clear? </h3>
           <div className="modal-button">
-            <button onClick={handleClear} id="modal-yes">Yes</button>
-            <button onClick={modalClose} id="modal-no"> No </button>
+            <button onClick={handleClear} id="modal-yes">
+              Yes
+            </button>
+            <button onClick={modalClose} id="modal-no">
+              {" "}
+              No{" "}
+            </button>
           </div>
         </div>
       </Modal>
@@ -242,8 +249,9 @@ function Canvas({modalState, modalClose, modalOpen}) {
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
+          onMouseLeave={finishDrawing}
           ref={canvasRef}
-          style={{ border: "1px solid black" }}
+          style={{ border: "2px solid black" }}
         />
       </div>
     </>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import Canvas from '../components/Canvas/Canvas';
-import OutletLogo from '../assets/outlet_logo7.svg';
+import OutletLogo from '../assets/outlet_logo7.svg'
 
 function CanvasPage(){
   const [modalState, setModalState] = useState(false);
@@ -14,19 +14,21 @@ function CanvasPage(){
   };
 
   return (
-    <div className="canvas">
-
-
-      <div className="canvas__logo">
-        <img src={OutletLogo} alt="" />
+    <>
+      <div className="canvas">
+        <div className="canvas__logo">
+          <a href="/" className="canvas-logo-alink">
+            <img src={OutletLogo} alt="outlet logo" /> UTLET
+          </a>
+        </div>
+        <Canvas
+          modalOpen={modalOpen}
+          modalClose={modalClose}
+          modalState={modalState}
+        />
+        
       </div>
-      <h1>
-        this is canvas
-        <a href="/"> home</a>
-      </h1>
-
-      <Canvas modalOpen={modalOpen} modalClose={modalClose} modalState={modalState}/>
-    </div>
+    </>
   );
 }
 

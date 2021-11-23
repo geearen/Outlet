@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Modal  from './Modal/Modal';
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import * as AiIcons from 'react-icons/ai';

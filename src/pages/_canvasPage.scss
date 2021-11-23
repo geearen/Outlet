@@ -1,14 +1,38 @@
 .canvas {
-  background-color: $rich-black;
+  background: $rich-black;
+  position: relative;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
 
-  .canvas__logo > img {
+  .canvas__logo{
+    position: absolute;
+  }
+  .canvas__logo > a > img {
     width: 100px;
     height: auto;
-    margin: 1rem;
+    // margin: 1rem;
+
+  }
+  .canvas-logo-alink {
+    font-family: $logo-font;
+    color: $mellow-apricot;
+    text-decoration: none;
+    font-size: 3rem;
   }
 
+  
   .canvas__drawpad {
-    background-color: white;
+    background-color: $rich-black;
     padding: 0.8rem;
+    
+    canvas{
+      margin:0 1%;
+      background-color: white;
+    }
   }
 }

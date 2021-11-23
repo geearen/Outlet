@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 .landing_page { position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
+.canvas { background: #010206; position: relative; padding: 30px; height: 100%; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.canvas .canvas__logo { position: absolute; }
+
+.canvas .canvas__logo > a > img { width: 100px; height: auto; }
+
+.canvas .canvas-logo-alink { font-family: "Amatic SC", cursive; color: #f6c079; text-decoration: none; font-size: 3rem; }
+
+.canvas .canvas__drawpad { background-color: #010206; padding: 0.8rem; }
+
+.canvas .canvas__drawpad canvas { margin: 0 1%; background-color: white; }
+
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
 .logo__section .logo__svg { height: 150px; width: auto; }
@@ -67,13 +79,7 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .footer .footer__icon__container .footer__icon { padding: 0 20px; }
 
-.canvas { background-color: #010206; }
-
-.canvas .canvas__logo > img { width: 100px; height: auto; margin: 1rem; }
-
-.canvas .canvas__drawpad { background-color: white; padding: 0.8rem; }
-
-.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; margin: 0 20%; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border: 2px solid #f5fdfd; background-color: #f5fdfd; width: 80rem; border-radius: 2px; padding: 1rem; font-family: "Manrope", sans-serif; }
+.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: 0px 20% 20px 20%; border: 2px solid #f5fdfd; background-color: #f5fdfd; width: 80rem; border-radius: 2px; padding: 1rem; font-family: "Manrope", sans-serif; }
 
 .toolbar > * { padding: 0.5rem; }
 
