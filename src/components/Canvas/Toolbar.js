@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Modal  from './Modal/Modal';
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
-import * as AiIcons from 'react-icons/ai'
-
+import * as AiIcons from 'react-icons/ai';
+import * as BiIcons from 'react-icons/bi'
 
 function Toolbar({
   handleColor,
@@ -12,6 +12,7 @@ function Toolbar({
   handleEraserMode,
   handlePaintMode,
   handleLineMode,
+  handleRectangleMode,
   handleDownload,
   dataUrl,
   modalOpen,
@@ -41,6 +42,12 @@ function Toolbar({
       <div className="toolbar__line">
         <button onClick={handleLineMode} className="">
           <AiIcons.AiOutlineMenu className="toolbar-icons" />
+        </button>
+      </div>
+
+      <div className="toolbar__rectangle">
+        <button onClick={handleRectangleMode} className="">
+          <BiIcons.BiRectangle className="toolbar-icons" />
         </button>
       </div>
 
