@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 .landing_page { position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
-.canvas { background: #010206; position: relative; padding: 30px; height: 100%; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.canvas { background: #010206; position: relative; padding: 20px; height: 100%; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.canvas .canvas__logo { position: absolute; }
+.canvas .canvas__logo { position: absolute; left: 20%; top: 2%; }
 
-.canvas .canvas__logo > a > img { width: 100px; height: auto; }
+.canvas .canvas__logo > a > img { width: 80px; height: auto; }
 
 .canvas .canvas-logo-alink { font-family: "Amatic SC", cursive; color: #f6c079; text-decoration: none; font-size: 3rem; }
 
-.canvas .canvas__drawpad { background-color: #010206; padding: 0.8rem; }
+.canvas .canvas__drawpad { background-color: #010206; padding: 0.8rem; height: 100%; width: 100%; }
 
-.canvas .canvas__drawpad canvas { margin: 0 1%; background-color: white; }
+.canvas .canvas__drawpad canvas { background-color: white; }
 
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
@@ -87,13 +87,13 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .toolbar button { padding: 5px; font-size: 1rem; font-family: "Manrope", sans-serif; }
 
-.modal { background-color: rgba(1, 2, 6, 0.8); position: fixed; display: none; z-index: 1; left: 0; right: 0; width: 100%; height: 100%; }
+.modal { background-color: rgba(1, 2, 6, 0.8); position: absolute; display: none; z-index: 1; left: 0; right: 0; width: 100%; height: 100%; }
 
 .modal-show { display: block; }
 
 .modal-hide { display: none; }
 
-.modal-container { position: absolute; margin: 0 10%; width: 30rem; height: 12%; background: #f5fdfd; left: 25%; top: 30%; padding: 35px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-shadow: 5px 5px 1px 1px #f6c079; box-shadow: 5px 5px 1px 1px #f6c079; border-radius: 5px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-animation-name: animatetop; animation-name: animatetop; -webkit-animation-duration: 0.4s; animation-duration: 0.4s; }
+.modal-container { position: absolute; margin: 0 10%; width: 30rem; height: 12%; background: #f5fdfd; left: 32%; top: 32%; padding: 35px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-shadow: 5px 5px 1px 1px #f6c079; box-shadow: 5px 5px 1px 1px #f6c079; border-radius: 5px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-animation-name: animatetop; animation-name: animatetop; -webkit-animation-duration: 0.4s; animation-duration: 0.4s; }
 
 .modal-container .modal-content { font-family: "Manrope", sans-serif; }
 

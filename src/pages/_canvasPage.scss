@@ -1,7 +1,7 @@
 .canvas {
   background: $rich-black;
   position: relative;
-  padding: 30px;
+  padding: 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -11,9 +11,11 @@
 
   .canvas__logo{
     position: absolute;
+    left: 20%;
+    top: 2%;
   }
   .canvas__logo > a > img {
-    width: 100px;
+    width: 80px;
     height: auto;
     // margin: 1rem;
 
@@ -29,10 +31,13 @@
   .canvas__drawpad {
     background-color: $rich-black;
     padding: 0.8rem;
+    height: 100%;
+    width: 100%;
     
     canvas{
-      margin:0 1%;
+      // margin:0 1%;
       background-color: white;
+      
     }
   }
 }
