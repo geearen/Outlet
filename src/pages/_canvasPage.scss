@@ -2,8 +2,6 @@
   background: $rich-black;
   position: relative;
   padding: 20px;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,19 +38,11 @@
     filter: drop-shadow(2px 2px 2px $mellow-apricot);
   }
 
-  
-  .canvas__drawpad {
-    background-color: $rich-black;
-    padding: 0.8rem;
-    height: 100%;
-    width: 100%;
+  canvas{
+    background-color: white;
     
-    canvas{
-      // margin:0 1%;
-      background-color: white;
-      
-    }
   }
+  
 }
 
 @keyframes glowtext{
