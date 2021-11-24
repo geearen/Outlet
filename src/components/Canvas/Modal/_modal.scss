@@ -20,22 +20,22 @@
 .modal-container{
   position: absolute;
   margin:0 10%;
-  width: 30rem;
+  width: 400px;
   height: 12%;
   background: $mint-cream;
   left: 32%;
-  top: 32%;
+  top: 35%;
   padding: 35px;
   display:flex;
   box-shadow: 5px 5px 1px 1px $mellow-apricot;
   border-radius: 5px;
   justify-content: center;
+  align-items: center;
   animation-name: animatetop;
   animation-duration: 0.4s;
 
   .modal-content{
     font-family: $body-font;
-    
     .modal-button{
       display: flex;
       justify-content: center;
@@ -64,4 +64,26 @@
 @keyframes animatetop {
   from{top:-300; opacity:0}
   to{top:30%; opacity:1}
+}
+
+@media screen and (max-width:480px) {
+  .modal-container{
+    width: 300px;
+    left: 1%;
+    top: 25%;
+  }
+}
+
+@media screen and (max-width:800px){
+  .modal-container{
+    left: 15%;
+    top: 25%;
+  }
+}
+
+@media screen and (max-width:1200px){
+  .modal-container{
+    left: 25%;
+    top: 25%;
+  }
 }
