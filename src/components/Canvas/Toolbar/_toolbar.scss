@@ -1,48 +1,49 @@
-.toolbar{
+.toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0px 20% 20px 20%;
   border: 2px solid $mellow-apricot;
   background-color: whitesmoke;
-  width: 80rem;
+  width: 95%;
+  max-width: 1200px;
   border-radius: 2px;
   padding: 1rem;
   font-family: $body-font;
   letter-spacing: 2px;
   font-weight: 600;
 
-  & > *{
-    padding:0.5rem;
+  & > * {
+    padding: 0.5rem;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: black;
   }
   .color-option {
-  width: 80px;
-  height: 50px;
-  border: 2px solid $mellow-apricot;
+    width: 80px;
+    height: 50px;
+    border: 2px solid $mellow-apricot;
   }
 
-  .toolbar__color{
+  .toolbar__color {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .toolbar__size{
-    display:flex;
+  .toolbar__size {
+    display: flex;
     flex-direction: column;
     align-items: center;
 
-    input{
+    input {
       accent-color: $mellow-apricot;
     }
   }
 
-  button{
-    padding:5px;
+  button {
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid $rich-black;
     box-shadow: 2px 2px 2px 1px $mellow-apricot;
@@ -54,37 +55,45 @@
     transition: transform 250ms;
   }
 
-  button:hover{
+  button:hover {
     transform: translateY(-5px);
     background-color: $blizzard-blue;
   }
 
-  .btn-active{
+  .btn-active {
     background-color: $blizzard-blue;
   }
 
-  .toolbar-icons{
-    font-size:25px;
-    margin:2px;
+  .toolbar-icons {
+    font-size: 25px;
+    margin: 2px;
   }
 
-  .toolbar__download-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    p{
-      margin-left: 10px;
-    }
-  }
-
-  .toolbar__clear{
+  .toolbar__download-container {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    p{
+    p {
       margin-left: 10px;
     }
+  }
+
+  .toolbar__clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .toolbar {
+    flex-wrap: wrap;
+    margin: 10px 10px;
+    width: 95%;
   }
 }
