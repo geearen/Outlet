@@ -255,16 +255,14 @@ function Canvas({modalState, modalClose, modalOpen}) {
           </div>
         </div>
       </Modal>
-      <div className="canvas__drawpad">
-        <canvas
-          onMouseDown={startDrawing}
-          onMouseUp={finishDrawing}
-          onMouseMove={draw}
-          // onMouseLeave={onMouseLeave}
-          ref={canvasRef}
-          style={{ border: "2px solid black" }}
-        />
-      </div>
+      <canvas
+        onMouseDown={startDrawing}
+        onMouseUp={finishDrawing}
+        onMouseMove={draw}
+        // onMouseLeave={onMouseLeave}
+        ref={canvasRef}
+        style={{ border: "2px solid black" }}
+      />
     </>
   );
 }
