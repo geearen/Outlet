@@ -25,8 +25,12 @@
 
 <h2>Wireframe/Design</h2>
 <h3>Landing Page</h3>
+<img src="https://res.cloudinary.com/dsxis0hux/image/upload/v1637735420/pics/Capture_uvstcz.png" alt="logo section">
+<img src="https://res.cloudinary.com/dsxis0hux/image/upload/v1637735609/pics/Capture_dgvoyj.png" alt="outlet section">
+<img src="https://res.cloudinary.com/dsxis0hux/image/upload/v1637735644/pics/Capture_viewos.png" alt="devs section">
 
 <h3>Drawing Canvas</h3>
+<img src="https://res.cloudinary.com/dsxis0hux/image/upload/v1637787016/pics/Capture_pjjsib.png" alt="canvas wireframe">
 
 <h2>The Team</h2>
 <h3>Allen Gonzales</h3>
