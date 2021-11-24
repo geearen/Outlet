@@ -47,7 +47,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     context.strokeStyle = '#000000';
     context.lineWidth = 5;
     contextRef.current = context;
-  }, [])
+  }, [window.innerWidth,window.innerHeight])
 
   const startDrawing = useCallback(({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
@@ -68,7 +68,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     setCurrentColor(selectedColor.current);
     dynamicLineWidth(selectedLineWidth.current);
     
-    if(isPaintMode.current || isEraserMode.current){
+    if(isPaintMode.current || isEraserMode.current || isLineMode.current || isCircleMode.current || isRectangleMode.current){
       isEraserMode.current ? (contextRef.current.globalCompositeOperation ='destination-out') :(contextRef.current.globalCompositeOperation = 'source-over')
     }
     
@@ -205,11 +205,15 @@ function Canvas({modalState, modalClose, modalOpen}) {
 
   const handleEraserMode = useCallback(()=>{
     setIsPaint(false);
-    isEraserMode.current = true;
+    isPaintMode.current = false;
     setIsEraser(true);
+    isEraserMode.current = true;
     setIsLine(false);
+    isLineMode.current = false;
     setIsRectangle(false);
+    isPaintMode.current = false;
     setIsCircle(false);
+    isCircleMode.current = false;
   },[])
 
 
