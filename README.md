@@ -1,6 +1,6 @@
 # Outlet
 
-## [Check out the app here!](https://vercel.com/geearen/outlet)
+## [Check out the app here!](https://outlet.vercel.app/)
 
 Outlet is a responsive drawing app where you can create art of your own. Draw with pen and fun shapes, save to your computer, clear, and draw again!
 
