@@ -12,8 +12,6 @@
   justify-content: flex-end;
   font-family: $header-font;
   text-transform: uppercase;
-  // background: rgba($rich-black, 0.4);
-  // padding: 30px;
 }
 
 .nav-item {
@@ -27,10 +25,9 @@
     color: $mint-cream;
     text-decoration: none;
   }
-
 }
 
-.nav-item:hover{
+.nav-item:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px 3px $mint-cream;
 }
