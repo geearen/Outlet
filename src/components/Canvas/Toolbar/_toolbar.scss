@@ -58,6 +58,10 @@
     transform: translateY(-5px);
   }
 
+  .btn-active{
+    background-color: $blizzard-blue;
+  }
+
   .toolbar-icons{
     font-size:25px;
     margin:2px;

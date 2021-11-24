@@ -107,6 +107,8 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .toolbar button:hover { -webkit-transform: translateY(-5px); transform: translateY(-5px); }
 
+.toolbar .btn-active { background-color: #9ee5ef; }
+
 .toolbar .toolbar-icons { font-size: 25px; margin: 2px; }
 
 .toolbar .toolbar__download-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }

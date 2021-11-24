@@ -16,20 +16,28 @@ function Toolbar({
   handleDownload,
   dataUrl,
   modalOpen,
+  isPaint,
+  isLine,
+  isRectangle,
+  isCircle,
+  isEraser,
 }) 
 {
-  const [activeBtn, setActiveBtn] = useState(false);
-  const isActive = useRef(false);
-
+  
   return (
     <div className="toolbar">
       <div className="toolbar__color">
         <label htmlFor="color">Color</label>
-        <input type="color" name="color" onChange={handleColor} className="color-option" />
+        <input
+          type="color"
+          name="color"
+          onChange={handleColor}
+          className="color-option"
+        />
       </div>
 
       <div className="toolbar__size">
-        <label htmlfor="range">Stroke Size</label>
+        <label htmlFor="range">Stroke Size</label>
         <input
           type="range"
           name="range"
@@ -41,43 +49,61 @@ function Toolbar({
       </div>
 
       <div className="toolbar__paint">
-        <button onClick={handlePaintMode} className="">
+        <button
+          onClick={handlePaintMode}
+          className={`${isPaint ? "btn-active" : ""}`}
+        >
           <FaIcons.FaPaintBrush className="toolbar-icons" />
         </button>
       </div>
 
       <div className="toolbar__line">
-        <button onClick={handleLineMode} className="">
+        <button
+          onClick={handleLineMode}
+          className={`${isLine ? "btn-active" : ""}`}
+        >
           <AiIcons.AiOutlineMenu className="toolbar-icons" />
         </button>
       </div>
 
       <div className="toolbar__rectangle">
-        <button onClick={handleRectangleMode} className="">
+        <button
+          onClick={handleRectangleMode}
+          className={`${isRectangle ? "btn-active" : ""}`}
+        >
           <BiIcons.BiRectangle className="toolbar-icons" />
         </button>
       </div>
 
       <div className="toolbar__circle">
-        <button onClick={handleCircleMode} className="">
+        <button
+          onClick={handleCircleMode}
+          className={`${isCircle ? "btn-active" : ""}`}
+        >
           <BiIcons.BiCircle className="toolbar-icons" />
         </button>
       </div>
 
       <div className="toolbar__eraser">
-        <button onClick={handleEraserMode} className="">
+        <button
+          onClick={handleEraserMode}
+          className={`${isEraser ? "btn-active" : ""}`}
+        >
           <FaIcons.FaEraser className="toolbar-icons" />
         </button>
       </div>
 
       <div className="toolbar__download">
-        <a download="image.png" onClick={handleDownload} href={dataUrl} className="toolbar__download-container">
-          <button className="toolbar-icons" onClick={handleDownload}>
+        <a
+          download="image.png"
+          onClick={handleDownload}
+          href={dataUrl}
+          className="toolbar__download-container"
+        >
+          <button className="toolbar-icons">
             <FaIcons.FaRegSave className="toolbar-icons" />
           </button>
-            <p>
-              Save Image 
-            </p>
+          <p>Save Image</p>
         </a>
       </div>
 
@@ -85,9 +111,7 @@ function Toolbar({
         <button onClick={modalOpen}>
           <MdIcons.MdClear className="toolbar-icons" />
         </button>
-        <p>
-          Clear Canvas
-        </p>
+        <p>Clear Canvas</p>
       </div>
     </div>
   );

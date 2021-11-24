@@ -8,7 +8,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const contextRef = useRef(null);
   
   const [isDrawing, setIsDrawing] = useState(false);
-  const [isPaint, setIsPaint] = useState(false);
+  const [isPaint, setIsPaint] = useState(true);
   const [isLine, setIsLine] = useState(false);
   const [isRectangle, setIsRectangle] = useState(false);
   const [isCircle, setIsCircle] = useState(false);
@@ -16,24 +16,25 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
   const [dataUrl, setDataUrl] = useState('#')
-
+  
   const selectedColor = useRef('#000000');
   const selectedLineWidth = useRef(5);
   const direction = useRef(true);
-  const isPaintMode= useRef(false);
+  const isPaintMode= useRef(true);
   const isEraserMode = useRef(false);
   const isLineMode = useRef(false);
   const isRectangleMode = useRef(false);
   const isCircleMode = useRef(false);
   const lastX = useRef(0);
   const lastY = useRef(0);
+  
+  const states = {isPaint, isLine, isRectangle, isCircle, isEraser}; 
 
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
-    // canvas.style.width = `${document.body.clientWidth}px`;
     canvas.style.width = `${document.body.clientWidth}px`;
 
     canvas.style.height = `${window.innerHeight}px`;
@@ -203,7 +204,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   },[])
 
   const handleEraserMode = useCallback(()=>{
-    setIsPaint(true);
+    setIsPaint(false);
     isEraserMode.current = true;
     setIsEraser(true);
     setIsLine(false);
@@ -223,6 +224,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     <>
       <Toolbar
         className="canvas__toolbar"
+        {...states}
         handleColor={handleColor}
         handleWidth={handleWidth}
         handleClear={handleClear}
