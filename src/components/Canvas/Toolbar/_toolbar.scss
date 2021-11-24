@@ -9,13 +9,13 @@
   width: 95%;
   max-width: 1200px;
   border-radius: 2px;
-  padding: 1rem;
+  padding: 10px 0;
   font-family: $body-font;
   letter-spacing: 2px;
   font-weight: 600;
 
   & > * {
-    padding: 0.5rem;
+    padding: 10px;
   }
 
   a {
@@ -52,93 +52,115 @@
     filter: drop-shadow(2px 2px 2px $mellow-apricot);
   }
 
-  .color-option {
-    width: 80px;
-    height: 50px;
-    border: 2px solid $mellow-apricot;
+  .mobile-toggle-icon {
+    display: none;
+    cursor: pointer;
   }
 
-  .toolbar__color {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .toolbar__size {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    input {
-      accent-color: $mellow-apricot;
-    }
-  }
-
-  button {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid $rich-black;
-    box-shadow: 2px 2px 2px 1px $mellow-apricot;
-    background-color: $mint-cream;
-    font-size: 1rem;
-    font-family: $body-font;
-    text-align: center;
-    line-height: 2px;
-    transition: transform 250ms;
-  }
-
-  button:hover {
-    transform: translateY(-5px);
-    background-color: $blizzard-blue;
-  }
-
-  .btn-active {
-    background-color: $blizzard-blue;
-  }
-
-  .toolbar-icons {
-    font-size: 25px;
-    margin: 2px;
-  }
-
-  .toolbar__download-container {
+  // TOOLBAR TOOLS
+  .toolbar__tools {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    p {
-      margin-left: 10px;
+    & > * {
+      padding: 10px;
     }
-  }
 
-  .toolbar__clear {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .color-option {
+      width: 80px;
+      height: 50px;
+      border: 2px solid $mellow-apricot;
+      cursor: pointer;
+    }
 
-    p {
-      margin-left: 10px;
+    .toolbar__color {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .toolbar__size {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        accent-color: $mellow-apricot;
+        cursor: pointer;
+      }
+    }
+
+    button {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid $rich-black;
+      box-shadow: 2px 2px 2px 1px $mellow-apricot;
+      background-color: $mint-cream;
+      font-size: 1rem;
+      font-family: $body-font;
+      text-align: center;
+      line-height: 2px;
+      transition: transform 250ms;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: translateY(-5px);
+      background-color: $blizzard-blue;
+    }
+
+    .btn-active {
+      background-color: $blizzard-blue;
+    }
+
+    .toolbar-icons {
+      font-size: 25px;
+      margin: 2px;
+    }
+
+    .toolbar__download-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    .toolbar__clear {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        margin-left: 10px;
+      }
     }
   }
 }
 
-// @media screen and (max-width: 667px) {
-//   .toolbar > * {
-//     flex-direction: column;
-//     flex-wrap: no-wrap;
-//     align-content: flex-end;
-//     cursor: pointer;
-//     margin-right: 10px;
-//   }
+@media screen and (max-width: 1067px) {
+  .toolbar {
+    justify-content: space-around;
 
-// .nav-menu.active {
-//   display: flex;
-//   flex-direction: column;
-//   align-content: flex-start;
-//   width: 100%;
-//   text-align: center;
-// }
+    .mobile-toggle-icon {
+      display: inline-block;
+      color: $rich-black;
+      font-size: 2rem;
+    }
 
-//   .nav-item {
-//     align-content: flex-end;
-//   }
-// }
+    .toolbar__tools {
+      display: none;
+    }
+
+    .toolbar__tools.active {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
