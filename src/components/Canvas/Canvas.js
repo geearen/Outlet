@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useEffect, useRef, useCallback, useState, useLayoutEffect } from 'react';
 import Toolbar from '../Canvas/Toolbar/Toolbar'
 import Modal from './Modal/Modal';
 
@@ -47,7 +47,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     context.strokeStyle = '#000000';
     context.lineWidth = 5;
     contextRef.current = context;
-  }, [window.innerWidth,window.innerHeight])
+  }, [])
 
   const startDrawing = useCallback(({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
