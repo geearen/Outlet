@@ -8,19 +8,18 @@ import AboutOutlet from '../components/Landing/AboutOutlet/AboutOutlet';
 import Developer from '../components/Landing/Developers/Developer';
 
 function LandingPage(){
-  return(
+  return (
     <>
-        <div className="landing_page">
-          <LogoBackground/>
-          <Navbar/> 
-          <LogoSection/>  
-          <AboutOutlet />
-          <Developer/>
-          <Footer/>
-        </div>
-        
+      <div className="landing_page">
+        <LogoBackground />
+        <Navbar />
+        <LogoSection />
+        <AboutOutlet />
+        <Developer />
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 
 export default LandingPage;

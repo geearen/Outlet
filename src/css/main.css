@@ -21,11 +21,75 @@
 @keyframes glowtext { from { text-shadow: 0 0 1px #f6c079; }
   to { text-shadow: 0 0 20px #f6c079; } }
 
-.logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
+.logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; position: relative; }
 
-.logo__section .logo__svg { height: 150px; width: auto; }
+.logo__section .logo__svg { height: 150px; width: auto; -webkit-animation: glowLogoSvg 1s ease-in infinite alternate; animation: glowLogoSvg 1s ease-in infinite alternate; }
 
-.logo__section .logo__text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; }
+.logo__section .logo__text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; letter-spacing: 5px; -webkit-animation: glowtext 1s ease-in infinite alternate; animation: glowtext 1s ease-in infinite alternate; }
+
+#comets { position: absolute; top: -150px; width: 100%; text-align: left; height: 100%; min-height: 900px; overflow: hidden; z-index: 1; }
+
+#comets i { display: inline-block; width: 250px; height: 150px; position: absolute; border-radius: 5% 40% 70%; -webkit-box-shadow: inset 0px 0px 1px #294b67; box-shadow: inset 0px 0px 1px #294b67; border: 1px solid #333; z-index: 1; background-color: #f6c079; opacity: .7; -webkit-animation: falling 5s 0s infinite; animation: falling 5s 0s infinite; -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in; }
+
+#comets i:nth-child(1) { left: 50vw; height: 73px; width: 3px; background-color: #f6c079; }
+
+#comets i:nth-child(3) { height: 11px; width: 3px; -webkit-animation: falling3 8s 3s infinite; animation: falling3 8s 3s infinite; left: 10vw; background-color: #f6c079; }
+
+#comets i:nth-child(2) { -webkit-animation: falling2 6s 1s infinite; animation: falling2 6s 1s infinite; left: 30vw; height: 70px; width: 4px; background-color: #f6c079; }
+
+#comets i:nth-child(4) { -webkit-animation: falling 8s 3s infinite; animation: falling 8s 3s infinite; height: 12px; width: 3px; left: 10vw; background-color: #f5fdfd; }
+
+#comets i:nth-child(5) { -webkit-animation: falling3 10s 1s infinite; animation: falling3 10s 1s infinite; height: 100px; width: 3px; left: 5vw; background-color: #f5fdfd; }
+
+#comets i:nth-child(6) { -webkit-animation: falling2 10s 1s infinite; animation: falling2 10s 1s infinite; height: 50px; width: 5px; left: 60vw; background-color: #f5fdfd; }
+
+@-webkit-keyframes falling { 0% { -webkit-transform: translate3d(100px, 0px, 0px) rotate(160deg); }
+  3% { -webkit-transform: translate3d(450px, 900px, 0) rotate(160deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(450px, 900px, 0) rotate(160deg);
+    opacity: 0; } }
+
+@keyframes falling { 0% { -webkit-transform: translate3d(100px, 0px, 0px) rotate(160deg); }
+  3% { -webkit-transform: translate3d(450px, 900px, 0) rotate(160deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(450px, 900px, 0) rotate(160deg);
+    opacity: 0; } }
+
+@-webkit-keyframes falling3 { 0% { -webkit-transform: translate3d(0, 0, 0) rotate(150deg); }
+  10% { -webkit-transform: translate3d(430px, 640px, 0) rotate(150deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(430px, 640px, 0) rotate(150deg);
+    opacity: 0; } }
+
+@keyframes falling3 { 0% { -webkit-transform: translate3d(0, 0, 0) rotate(150deg); }
+  10% { -webkit-transform: translate3d(430px, 640px, 0) rotate(150deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(430px, 640px, 0) rotate(150deg);
+    opacity: 0; } }
+
+@-webkit-keyframes falling2 { 0% { -webkit-transform: translate3d(100px, 0, 0) rotate(130deg); }
+  15% { -webkit-transform: translate3d(800px, 580px, 0) rotate(130deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(800px, 680px, 0) rotate(180deg);
+    opacity: 0; } }
+
+@keyframes falling2 { 0% { -webkit-transform: translate3d(100px, 0, 0) rotate(130deg); }
+  15% { -webkit-transform: translate3d(800px, 580px, 0) rotate(130deg);
+    opacity: 0; }
+  100% { -webkit-transform: translate3d(800px, 680px, 0) rotate(180deg);
+    opacity: 0; } }
+
+@-webkit-keyframes glowLogoText { from { text-shadow: 0 0 5px #f6c079; }
+  to { text-shadow: 0 0 30px #f6c079; } }
+
+@keyframes glowLogoText { from { text-shadow: 0 0 5px #f6c079; }
+  to { text-shadow: 0 0 30px #f6c079; } }
+
+@-webkit-keyframes glowLogoSvg { from { -webkit-filter: drop-shadow(0 0 2px #f6c079); filter: drop-shadow(0 0 2px #f6c079); }
+  to { -webkit-filter: drop-shadow(0 0 8px #f6c079); filter: drop-shadow(0 0 8px #f6c079); } }
+
+@keyframes glowLogoSvg { from { -webkit-filter: drop-shadow(0 0 2px #f6c079); filter: drop-shadow(0 0 2px #f6c079); }
+  to { -webkit-filter: drop-shadow(0 0 8px #f6c079); filter: drop-shadow(0 0 8px #f6c079); } }
 
 .navbar { position: fixed; top: 0; width: 100%; background: rgba(1, 2, 6, 0.4); padding: 30px; }
 
