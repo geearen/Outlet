@@ -23,9 +23,21 @@
 
 .logo__section { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; width: auto; margin-left: 10%; margin-right: 10%; }
 
-.logo__section .logo__svg { height: 150px; width: auto; }
+.logo__section .logo__svg { height: 150px; width: auto; -webkit-animation: glowLogoSvg 1s ease-in infinite alternate; animation: glowLogoSvg 1s ease-in infinite alternate; }
 
-.logo__section .logo__text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; }
+.logo__section .logo__text { color: #f6c079; font-family: "Amatic SC", cursive; font-size: 70px; letter-spacing: 5px; -webkit-animation: glowtext 1s ease-in infinite alternate; animation: glowtext 1s ease-in infinite alternate; }
+
+@-webkit-keyframes glowLogoText { from { text-shadow: 0 0 5px #f6c079; }
+  to { text-shadow: 0 0 30px #f6c079; } }
+
+@keyframes glowLogoText { from { text-shadow: 0 0 5px #f6c079; }
+  to { text-shadow: 0 0 30px #f6c079; } }
+
+@-webkit-keyframes glowLogoSvg { from { -webkit-filter: drop-shadow(0 0 2px #f6c079); filter: drop-shadow(0 0 2px #f6c079); }
+  to { -webkit-filter: drop-shadow(0 0 8px #f6c079); filter: drop-shadow(0 0 8px #f6c079); } }
+
+@keyframes glowLogoSvg { from { -webkit-filter: drop-shadow(0 0 2px #f6c079); filter: drop-shadow(0 0 2px #f6c079); }
+  to { -webkit-filter: drop-shadow(0 0 8px #f6c079); filter: drop-shadow(0 0 8px #f6c079); } }
 
 .navbar { position: fixed; top: 0; width: 100%; background: rgba(1, 2, 6, 0.4); padding: 30px; }
 

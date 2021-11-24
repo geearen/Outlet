@@ -13,6 +13,7 @@
     // top: 420px;
     height: 150px;
     width: auto;
+    animation: glowLogoSvg 1s ease-in infinite alternate;
   }
   .logo__text{
 
@@ -22,6 +23,27 @@
     // left: 1250px;
     // top: 390px;
     font-size: 70px;
+    letter-spacing: 5px;
+
+    animation: glowtext 1s ease-in infinite alternate;
   }    
 
+}
+
+@keyframes glowLogoText{
+  from{
+    text-shadow: 0 0 5px $mellow-apricot;
+  }
+  to{
+    text-shadow: 0 0 30px $mellow-apricot;
+  }
+}
+
+@keyframes glowLogoSvg {
+  from{
+    filter: drop-shadow(0 0 2px $mellow-apricot);
+  }
+  to{
+    filter: drop-shadow(0 0 8px $mellow-apricot);
+  }
 }
