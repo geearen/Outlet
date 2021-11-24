@@ -1,0 +1,22 @@
+.canvas {
+  background: $rich-black;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  canvas {
+    background-color: white;
+  }
+}
+
+@keyframes glowtext {
+  from {
+    text-shadow: 0 0 1px $mellow-apricot;
+  }
+  to {
+    text-shadow: 0 0 20px $mellow-apricot;
+  }
+}
