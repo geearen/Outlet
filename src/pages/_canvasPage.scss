@@ -7,59 +7,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
 
-  .canvas__logo{
-    position: absolute;
-    left: 20%;
-    top: 2%;
-  }
-  .canvas__logo > a > img {
-    width: 80px;
-    height: auto;
-    // margin: 1rem;
-
-  }
-  .canvas-logo-alink {
-    font-family: $logo-font;
-    color: $mellow-apricot;
-    text-decoration: none;
-    font-size: 3rem;
-    display: flex;
-    align-items: center;
-    transition: transform 300ms;
-    span{
-      letter-spacing: 2px;
-      margin-left: 5px;
-      animation: glowtext 1s ease-in-out infinite alternate;
-    }
-
-  }
-  .canvas-logo-alink:hover{
-    transform: translateY(-10px);
-    filter: drop-shadow(2px 2px 2px $mellow-apricot);
-  }
-
-  
   .canvas__drawpad {
     background-color: $rich-black;
     padding: 0.8rem;
     height: 100%;
     width: 100%;
-    
-    canvas{
-      // margin:0 1%;
+
+    canvas {
       background-color: white;
-      
     }
   }
 }
 
-@keyframes glowtext{
-  from{
+@keyframes glowtext {
+  from {
     text-shadow: 0 0 1px $mellow-apricot;
   }
-  to{
+  to {
     text-shadow: 0 0 20px $mellow-apricot;
   }
 }
