@@ -11,8 +11,11 @@
 </p>
 
 <h2>Install Instructions</h2>
-```yarn``` (dowloads all dependencies)
-```yarn dev``` (runs the application)
+To install dependencies and run the application:
+```
+yarn
+yarn dev
+```
 
 <h2>Technologies Used</h2>
 <ul>
