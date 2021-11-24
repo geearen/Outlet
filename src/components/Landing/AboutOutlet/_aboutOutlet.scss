@@ -30,11 +30,14 @@
   }
 
   .about__tutorial__video {
-    min-width: 300px;
-    height: 300px;
+    min-width: 500px;
+    height: 400px;
     border: 1px solid $usafa-blue;
     border-radius: 3px;
     box-shadow: 0 0 15px 7px $usafa-blue;
+    background-image: url("https://res.cloudinary.com/dsxis0hux/image/upload/v1637787421/pics/95ec31914e5497890e014bd1a992b20c_ahup47.gif");
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -44,6 +47,16 @@
 
     .about__tutorial__content {
       text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about__tutorial{
+
+    .about__tutorial__video{
+      min-width: 350px;
+      height: 250px;
     }
   }
 }
