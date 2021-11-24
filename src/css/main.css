@@ -105,7 +105,7 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .toolbar button { padding: 5px; border-radius: 5px; border: 1px solid #010206; -webkit-box-shadow: 2px 2px 2px 1px #f6c079; box-shadow: 2px 2px 2px 1px #f6c079; background-color: #f5fdfd; font-size: 1rem; font-family: "Manrope", sans-serif; text-align: center; line-height: 2px; -webkit-transition: -webkit-transform 250ms; transition: -webkit-transform 250ms; transition: transform 250ms; transition: transform 250ms, -webkit-transform 250ms; }
 
-.toolbar button:hover { -webkit-transform: translateY(-5px); transform: translateY(-5px); }
+.toolbar button:hover { -webkit-transform: translateY(-5px); transform: translateY(-5px); background-color: #9ee5ef; }
 
 .toolbar .btn-active { background-color: #9ee5ef; }
 
