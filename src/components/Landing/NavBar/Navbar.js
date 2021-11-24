@@ -28,11 +28,9 @@ function Navbar(){
                 
                 <Link to={item.pathname} onClick={closeMobileMenu}>
                   {item.title}
-                  {item.icon ? (
+                  {item.icon ? 
                     <span className="nav-item-icon">{item.icon}</span>
-                  ) : (
-                    ""
-                  )}
+                  : ''}
                 </Link>
                 
               )}

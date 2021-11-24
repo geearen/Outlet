@@ -11,17 +11,13 @@ function LandingPage(){
   return(
     <>
         <div className="landing_page">
-        <LogoBackground/>
-        <Navbar/> 
-        <LogoSection/>  
-        <AboutOutlet />
-        <Developer/>
-        <Footer/>
-          
-
+          <LogoBackground/>
+          <Navbar/> 
+          <LogoSection/>  
+          <AboutOutlet />
+          <Developer/>
+          <Footer/>
         </div>
-
-
         
     </>
   )

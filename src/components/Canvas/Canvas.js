@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import Toolbar from './Toolbar';
+import Toolbar from '../Canvas/Toolbar/Toolbar'
 import Modal from './Modal/Modal';
 
 function Canvas({modalState, modalClose, modalOpen}) {
@@ -8,7 +8,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const contextRef = useRef(null);
   
   const [isDrawing, setIsDrawing] = useState(false);
-  const [isPaint, setIsPaint] = useState(false);
+  const [isPaint, setIsPaint] = useState(true);
   const [isLine, setIsLine] = useState(false);
   const [isRectangle, setIsRectangle] = useState(false);
   const [isCircle, setIsCircle] = useState(false);
@@ -16,17 +16,19 @@ function Canvas({modalState, modalClose, modalOpen}) {
   const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
   const [dataUrl, setDataUrl] = useState('#')
-
+  
   const selectedColor = useRef('#000000');
   const selectedLineWidth = useRef(5);
   const direction = useRef(true);
-  const isPaintMode= useRef(false);
+  const isPaintMode= useRef(true);
   const isEraserMode = useRef(false);
   const isLineMode = useRef(false);
   const isRectangleMode = useRef(false);
   const isCircleMode = useRef(false);
   const lastX = useRef(0);
   const lastY = useRef(0);
+  
+  const states = {isPaint, isLine, isRectangle, isCircle, isEraser}; 
 
   // @desc initializes canvas api when component is mounted
   useEffect(() => {
@@ -34,6 +36,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
     canvas.style.width = `${document.body.clientWidth}px`;
+
     canvas.style.height = `${window.innerHeight}px`;
 
     // @desc context to allow us to draw on canvas which is needed in startDrawing, finish, and draw
@@ -112,6 +115,11 @@ function Canvas({modalState, modalClose, modalOpen}) {
     contextRef.current.closePath();
     setIsDrawing(false);
   };
+
+  // const onMouseLeave = () =>{
+  //   contextRef.current.closePath();
+  //   setIsDrawing(false);
+  // }
 
   const draw = ({ nativeEvent }) => {
     if (!isDrawing || isLine || isRectangle || isCircle) {
@@ -196,11 +204,12 @@ function Canvas({modalState, modalClose, modalOpen}) {
   },[])
 
   const handleEraserMode = useCallback(()=>{
-    setIsPaint(true);
+    setIsPaint(false);
     isEraserMode.current = true;
     setIsEraser(true);
     setIsLine(false);
     setIsRectangle(false);
+    setIsCircle(false);
   },[])
 
 
@@ -215,6 +224,7 @@ function Canvas({modalState, modalClose, modalOpen}) {
     <>
       <Toolbar
         className="canvas__toolbar"
+        {...states}
         handleColor={handleColor}
         handleWidth={handleWidth}
         handleClear={handleClear}
@@ -231,8 +241,13 @@ function Canvas({modalState, modalClose, modalOpen}) {
         <div className="modal-content">
           <h3> Are you sure you want to clear? </h3>
           <div className="modal-button">
-            <button onClick={handleClear} id="modal-yes">Yes</button>
-            <button onClick={modalClose} id="modal-no"> No </button>
+            <button onClick={handleClear} id="modal-yes">
+              Yes
+            </button>
+            <button onClick={modalClose} id="modal-no">
+              {" "}
+              No{" "}
+            </button>
           </div>
         </div>
       </Modal>
@@ -241,8 +256,9 @@ function Canvas({modalState, modalClose, modalOpen}) {
           onMouseDown={startDrawing}
           onMouseUp={finishDrawing}
           onMouseMove={draw}
+          // onMouseLeave={onMouseLeave}
           ref={canvasRef}
-          style={{ border: "1px solid black" }}
+          style={{ border: "2px solid black" }}
         />
       </div>
     </>

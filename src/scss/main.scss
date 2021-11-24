@@ -1,14 +1,14 @@
 @import "../_variables/colors";
 @import "../_variables/fonts";
 @import "../pages/landingPage";
+@import "../pages/canvasPage";
 @import "../components/Landing/LogoSection/logoSection";
 @import "../components/Landing/NavBar/navbar";
 @import "../components/Landing/Heading/heading";
 @import "../components/Landing/AboutOutlet/aboutOutlet";
 @import "../components/Landing/Developers/developer";
 @import "../components/Landing/Footer/footer";
-@import "../pages/canvasPage";
-@import "../components/Canvas/toolbar";
+@import "../components/Canvas/Toolbar/toolbar";
 @import "../components/Canvas/Modal/modal";
 
 * {
