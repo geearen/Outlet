@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope:wght@200;300;400;600&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap");
 .landing_page { position: relative; background: #010206; background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 2, 6, 0.5)), to(rgba(10, 32, 89, 0.5))); background: linear-gradient(180deg, rgba(1, 2, 6, 0.5) 0%, rgba(10, 32, 89, 0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010206",endColorstr="#0a2059",GradientType=1); }
 
-.canvas { background: #010206; position: relative; padding: 20px; height: 100%; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.canvas { background: #010206; position: relative; padding: 20px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.canvas .canvas__drawpad { background-color: #010206; padding: 0.8rem; height: 100%; width: 100%; }
-
-.canvas .canvas__drawpad canvas { background-color: white; }
+.canvas canvas { background-color: white; }
 
 @-webkit-keyframes glowtext { from { text-shadow: 0 0 1px #f6c079; }
   to { text-shadow: 0 0 20px #f6c079; } }

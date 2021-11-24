@@ -2,22 +2,13 @@
   background: $rich-black;
   position: relative;
   padding: 20px;
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  .canvas__drawpad {
-    background-color: $rich-black;
-    padding: 0.8rem;
-    height: 100%;
-    width: 100%;
-
-    canvas {
-      background-color: white;
-    }
+  canvas {
+    background-color: white;
   }
 }
 
