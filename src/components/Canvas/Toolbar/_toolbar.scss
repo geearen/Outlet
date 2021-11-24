@@ -1,48 +1,80 @@
-.toolbar{
+.toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px 20% 20px 20%;
+  flex-wrap: wrap;
+  margin: 0px 20% 8px 20%;
   border: 2px solid $mellow-apricot;
   background-color: whitesmoke;
-  width: 80rem;
+  width: 95%;
+  max-width: 1200px;
   border-radius: 2px;
   padding: 1rem;
   font-family: $body-font;
   letter-spacing: 2px;
   font-weight: 600;
 
-  & > *{
-    padding:0.5rem;
+  & > * {
+    padding: 0.5rem;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: black;
   }
-  .color-option {
-  width: 80px;
-  height: 50px;
-  border: 2px solid $mellow-apricot;
+
+  .canvas__logo {
+    padding-right: 30px;
   }
 
-  .toolbar__color{
+  .canvas-logo-alink {
+    font-family: $logo-font;
+    color: $mellow-apricot;
+    text-decoration: none;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    transition: transform 300ms;
+
+    span {
+      letter-spacing: 2px;
+      margin-left: 5px;
+      animation: glowtext 1s ease-in-out infinite alternate;
+    }
+  }
+
+  .canvas__logo > a > img {
+    width: 50px;
+  }
+
+  .canvas-logo-alink:hover {
+    transform: translateY(-10px);
+    filter: drop-shadow(2px 2px 2px $mellow-apricot);
+  }
+
+  .color-option {
+    width: 80px;
+    height: 50px;
+    border: 2px solid $mellow-apricot;
+  }
+
+  .toolbar__color {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .toolbar__size{
-    display:flex;
+  .toolbar__size {
+    display: flex;
     flex-direction: column;
     align-items: center;
 
-    input{
+    input {
       accent-color: $mellow-apricot;
     }
   }
 
-  button{
-    padding:5px;
+  button {
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid $rich-black;
     box-shadow: 2px 2px 2px 1px $mellow-apricot;
@@ -54,37 +86,59 @@
     transition: transform 250ms;
   }
 
-  button:hover{
+  button:hover {
     transform: translateY(-5px);
     background-color: $blizzard-blue;
   }
 
-  .btn-active{
+  .btn-active {
     background-color: $blizzard-blue;
   }
 
-  .toolbar-icons{
-    font-size:25px;
-    margin:2px;
+  .toolbar-icons {
+    font-size: 25px;
+    margin: 2px;
   }
 
-  .toolbar__download-container{
+  .toolbar__download-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    p{
+
+    p {
       margin-left: 10px;
     }
   }
 
-  .toolbar__clear{
+  .toolbar__clear {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    p{
+    p {
       margin-left: 10px;
     }
   }
 }
+
+// @media screen and (max-width: 667px) {
+//   .toolbar > * {
+//     flex-direction: column;
+//     flex-wrap: no-wrap;
+//     align-content: flex-end;
+//     cursor: pointer;
+//     margin-right: 10px;
+//   }
+
+// .nav-menu.active {
+//   display: flex;
+//   flex-direction: column;
+//   align-content: flex-start;
+//   width: 100%;
+//   text-align: center;
+// }
+
+//   .nav-item {
+//     align-content: flex-end;
+//   }
+// }

@@ -3,6 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 import * as AiIcons from 'react-icons/ai';
 import * as BiIcons from 'react-icons/bi'
+import OutletLogo from '../../../assets/outlet_logo7.svg';
 
 function Toolbar({
   handleColor,
@@ -26,6 +27,13 @@ function Toolbar({
   
   return (
     <div className="toolbar">
+      <div className="canvas__logo">
+          <a href="/" className="canvas-logo-alink">
+            <img src={OutletLogo} alt="outlet logo" />
+            <span>UTLET</span>
+          </a>
+      </div>
+
       <div className="toolbar__color">
         <label htmlFor="color">Color</label>
         <input

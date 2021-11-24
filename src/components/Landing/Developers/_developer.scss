@@ -34,10 +34,15 @@
   flex-direction: column;
   justify-content: center;
   background: transparentize($spanish-violet, 0.2);
+  font-size: 1.3rem;
 
   h3 {
     text-transform: uppercase;
     padding-top: 10px;
+  }
+
+  p {
+    line-height: 1.7;
   }
 
   a {

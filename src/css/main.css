@@ -3,16 +3,6 @@
 
 .canvas { background: #010206; position: relative; padding: 20px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.canvas .canvas__logo { position: absolute; left: 20%; top: 2%; }
-
-.canvas .canvas__logo > a > img { width: 80px; height: auto; }
-
-.canvas .canvas-logo-alink { font-family: "Amatic SC", cursive; color: #f6c079; text-decoration: none; font-size: 3rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-transition: -webkit-transform 300ms; transition: -webkit-transform 300ms; transition: transform 300ms; transition: transform 300ms, -webkit-transform 300ms; }
-
-.canvas .canvas-logo-alink span { letter-spacing: 2px; margin-left: 5px; -webkit-animation: glowtext 1s ease-in-out infinite alternate; animation: glowtext 1s ease-in-out infinite alternate; }
-
-.canvas .canvas-logo-alink:hover { -webkit-transform: translateY(-10px); transform: translateY(-10px); -webkit-filter: drop-shadow(2px 2px 2px #f6c079); filter: drop-shadow(2px 2px 2px #f6c079); }
-
 .canvas canvas { background-color: white; }
 
 @-webkit-keyframes glowtext { from { text-shadow: 0 0 1px #f6c079; }
@@ -133,9 +123,11 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .developer__profile { display: -webkit-box; display: -ms-flexbox; display: flex; gap: 50px; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; min-height: 300px; font-family: "Manrope", sans-serif; color: #f5fdfd; }
 
-.developer__about { border-radius: 3px; -webkit-box-shadow: 0 0 13px 7px #492d76; box-shadow: 0 0 13px 7px #492d76; line-height: 2; margin: auto; padding: 0 20px; min-height: 300px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background: rgba(73, 45, 118, 0.8); }
+.developer__about { border-radius: 3px; -webkit-box-shadow: 0 0 13px 7px #492d76; box-shadow: 0 0 13px 7px #492d76; line-height: 2; margin: auto; padding: 0 20px; min-height: 300px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; background: rgba(73, 45, 118, 0.8); font-size: 1.3rem; }
 
 .developer__about h3 { text-transform: uppercase; padding-top: 10px; }
+
+.developer__about p { line-height: 1.7; }
 
 .developer__about a { color: #9ee5ef; display: inline-block; padding: 0 20px; font-size: 2rem; -webkit-transition: 0.3s; transition: 0.3s; }
 
@@ -151,11 +143,21 @@ h2.section-heading { font-family: "Open Sans Condensed", sans-serif; color: #f6c
 
 .footer .footer__icon__container .footer__icon { padding: 0 20px; }
 
-.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: 0px 20% 20px 20%; border: 2px solid #f6c079; background-color: whitesmoke; width: 80rem; border-radius: 2px; padding: 1rem; font-family: "Manrope", sans-serif; letter-spacing: 2px; font-weight: 600; }
+.toolbar { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0px 20% 8px 20%; border: 2px solid #f6c079; background-color: whitesmoke; width: 95%; max-width: 1200px; border-radius: 2px; padding: 1rem; font-family: "Manrope", sans-serif; letter-spacing: 2px; font-weight: 600; }
 
 .toolbar > * { padding: 0.5rem; }
 
 .toolbar a { text-decoration: none; color: black; }
+
+.toolbar .canvas__logo { padding-right: 30px; }
+
+.toolbar .canvas-logo-alink { font-family: "Amatic SC", cursive; color: #f6c079; text-decoration: none; font-size: 36px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-transition: -webkit-transform 300ms; transition: -webkit-transform 300ms; transition: transform 300ms; transition: transform 300ms, -webkit-transform 300ms; }
+
+.toolbar .canvas-logo-alink span { letter-spacing: 2px; margin-left: 5px; -webkit-animation: glowtext 1s ease-in-out infinite alternate; animation: glowtext 1s ease-in-out infinite alternate; }
+
+.toolbar .canvas__logo > a > img { width: 50px; }
+
+.toolbar .canvas-logo-alink:hover { -webkit-transform: translateY(-10px); transform: translateY(-10px); -webkit-filter: drop-shadow(2px 2px 2px #f6c079); filter: drop-shadow(2px 2px 2px #f6c079); }
 
 .toolbar .color-option { width: 80px; height: 50px; border: 2px solid #f6c079; }
 
